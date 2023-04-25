@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+//installed axios
+// npm i axios dotenv react-com react-router-dom scss
+//git repo check
 
 function App() {
   return (
