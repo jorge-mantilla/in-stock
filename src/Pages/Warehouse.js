@@ -10,7 +10,7 @@ function WarehousePage() {
             <form id="upload__form-input" className="upload__form-input" novalidate>
                 <div className="upload__div">
                     <label className="upload__name__type" for="title">TITLE YOUR VIDEO</label>
-                    <input onChange={handleChange} className="upload__name__text" type="text" name="title" placeholder="Search..." required />
+                    <input className="upload__name__text" type="text" name="title" placeholder="Search..." required />
                 </div>
                 <div>
                     <Link className='link' to={'/'}>
