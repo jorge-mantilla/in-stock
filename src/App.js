@@ -1,5 +1,8 @@
-import logo from './logo.svg';
+import WarehousePage from './Pages/WarehousePage/Warehouse';
+import Main from './components/Main/Main';
 import './App.css';
+import WarehouseDetailsPage from './Pages/WarehouseDetailsPage/WarehouseDetails';
+import InventoryPage from './Pages/InventoryPage/Inventory';
 //installed axios
 // npm i axios dotenv react-com react-router-dom scss
 //git repo check
@@ -7,20 +10,13 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' element={<Main/>}></Route>
+        <Route path='/Warehouse' element={<WarehousePage />}></Route>
+        <Route path='/WarehouseDetails' element={<WarehouseDetailsPage />}></Route>
+        <Route path='/Inventory' element={<InventoryPage />}></Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

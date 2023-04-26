@@ -1,4 +1,4 @@
-import Warehouses from "../components/Warehouses/Warehouses";
+import Warehouses from "../../components/Warehouses/Warehouses";
 import { useEffect } from "react";
 
 function WarehousePage() {
