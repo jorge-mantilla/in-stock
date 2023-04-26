@@ -1,7 +1,7 @@
 $breakpoints: (
-    "sm": 23.4375rem,
-    "md": 48rem,
-    "lg": 80rem,
+    "sm": 320px,
+    "md": 768px,
+    "lg": 1280px,
 );
 
 @mixin sm {
