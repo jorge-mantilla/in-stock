@@ -1,0 +1,74 @@
+// Desktop Font Sizes
+
+@mixin font_Header-Desktop {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+@mixin font_SubHeader-Desktop {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+@mixin font_Labels-Links-Buttons-Desktop {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin font_Table-Header-Desktop {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+@mixin font_Body-Large-Desktop {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+@mixin font_Body-Medium-Desktop {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin font_Body-small-Desktop {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+
+// Mobile Font Sizes
+
+@mixin font_Header-Mobile {
+    font-size: 28px;
+    line-height: 26px;
+}
+
+@mixin font_SubHeader-Mobile {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+@mixin font_Labels-Links-Buttons-Mobile {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+@mixin font_Table-Header-Mobile {
+    font-size: 11px;
+    line-height: 16px;
+}
+
+@mixin font_Body-Large-Mobile {
+    font-size: 15px;
+    line-height: 26px;
+}
+
+@mixin font_Body-Medium-Mobile {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+@mixin font_Body-small-Mobile {
+    font-size: 11px;
+    line-height: 16px;
+}

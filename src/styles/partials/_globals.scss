@@ -1,0 +1,53 @@
+@use './_variables' as *;
+@use './mixins' as *;
+@use './typography' as *;
+
+$primary-color--Instock_Black: #13182C;
+$primary-color--Instock_Indigo: #2e66e5;
+$primary-color--Instock_White: #ffffff;
+
+$secondary-color--Slate: #5c667e;
+$secondary-color--Cloud: #BDC5D5;
+
+$background-color--Graphite: #232940;
+$background-color--Light-Gray: #f7f8f9;
+
+$supporting-color--Green: #158463;
+$supporting-color--Red: #c94515;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    font-family: 'Titillium Web', sans-serif;
+    color: $primary-color--Instock_Black;
+}
+
+
+h1 {
+    font-size: 28px;
+    line-height: 26px;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+h3 {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+h4 {
+    font-size: 11px;
+    line-height: 16px;
+}
+
+p {
+    font-size: 11px;
+    line-height: 16px;
+}
