@@ -1,8 +1,10 @@
 import InventoryList from "../../components/InventoryList/InventoryList";
 import { Link } from 'react-router-dom';
 
-function InventoryPage() {
-    
+function InventoryPage(props) {
+
+    const warehousesArray = props.warehousesArray
+
     return (
     <>
         <div>
@@ -19,7 +21,7 @@ function InventoryPage() {
                 </div>
             </form>
         </div>
-        <InventoryList />
+        <InventoryList warehousesArray={warehousesArray} />
     </>
 );
 }

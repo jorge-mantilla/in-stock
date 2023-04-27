@@ -1,17 +1,10 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 function Warehouses(props) {
-    // const [warehousesArray, setWarehousesArray] = useState([])
-
-    // useEffect(() => {
-    //     axios.get(`http://localhost:5051/warehouses`).then((response) => {
-    //         setWarehousesArray(response.data)
-    //     })
-    // }, []);
     
     const warehousesArray = props.warehousesArray
+
+    console.log("this is my WAREARRAY at WAREHOUSES", warehousesArray);
 
     return (
     <>

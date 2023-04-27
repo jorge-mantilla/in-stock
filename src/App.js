@@ -18,6 +18,7 @@ function App() {
 
   useEffect(() => {
       axios.get(`http://localhost:5051/warehouses`).then((response) => {
+        console.log("APP JS", response.data);
           setWarehousesArray(response.data)
       })
   }, []);
@@ -29,7 +30,7 @@ function App() {
         <Route path='/' element={<Main/>}></Route>
         <Route path='/Warehouse' element={<WarehousePage warehousesArray={warehousesArray} />}></Route>
         <Route path='/WarehouseDetails' element={<WarehouseDetailsPage />}></Route>
-        <Route path='/Inventory' element={<InventoryPage />}></Route>
+        <Route path='/Inventory' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
         <Route path='/InventoryDetails' element={<InventoryListPage />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

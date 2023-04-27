@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 
-function WarehousePage() {
-    
+function WarehousePage(props) {
+    const warehousesArray = props.warehousesArray
+
     return (
     <>
         <div>
@@ -21,7 +22,7 @@ function WarehousePage() {
                 </div>
             </form>
         </div>
-        <Warehouses />
+        <Warehouses warehousesArray={warehousesArray} />
     </>
 );
 }
