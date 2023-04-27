@@ -2,15 +2,17 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
-function Warehouses() {
-    const [warehousesArray, setWarehousesArray] = useState([])
+function Warehouses(props) {
+    // const [warehousesArray, setWarehousesArray] = useState([])
 
-    useEffect(() => {
-        axios.get(`http://localhost:5051/warehouses`).then((response) => {
-            setWarehousesArray(response.data)
-        })
-    }, []);
+    // useEffect(() => {
+    //     axios.get(`http://localhost:5051/warehouses`).then((response) => {
+    //         setWarehousesArray(response.data)
+    //     })
+    // }, []);
     
+    const warehousesArray = props.warehousesArray
+
     return (
     <>
         <div>

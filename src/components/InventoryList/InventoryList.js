@@ -10,6 +10,10 @@ function InventoryList() {
             setInventoriesArray(response.data)
         })
     }, []);
+
+    // const warehouse = inventoriesArray.filter((inventory) => { 
+    //     return inventory.warehouse_id == videoToDisplay
+    // })
     
     return (
     <>
