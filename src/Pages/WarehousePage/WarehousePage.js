@@ -1,5 +1,5 @@
 import Warehouses from "../../components/Warehouses/Warehouses";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 
