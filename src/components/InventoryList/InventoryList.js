@@ -12,7 +12,7 @@ function InventoryList(props) {
         axios.get(`http://localhost:5051/inventories`).then((response) => {
             setInventoriesArray(response.data)
         })
-    }, [warehousesArray]);
+    }, [inventoriesArray]);
     
     return (
     <>
