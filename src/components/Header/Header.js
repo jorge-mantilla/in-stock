@@ -19,10 +19,10 @@ function Header() {
                         </div>
                     </div>
                     <div className='navbar__sec'>
-                        <Link to={'/warehouses'} className='navbar__links'>
+                        <Link to={'/warehouses'} id='navbar--link' className='navbar__links'>
                             < button className='navbar__btn current-page--active' type='submit'>Warehouses</button>
                         </Link>
-                        <Link to={'/inventory'} className='navbar__links'>
+                        <Link to={'/inventory'} id='navbar--link' className='navbar__links'>
                             <button className='navbar__btn  current-page--inactive' type='submit'>Inventory</button>
                         </Link>
                     </div>

@@ -39,6 +39,10 @@
         align-items: center;
         padding: 4px;
         width: 100%;
+
+        &:last-of-type {
+            justify-content: end;
+        }
     }
 
     &__header {
@@ -79,5 +83,11 @@
             transition: ease-in-out .1s;
             background-color: $primary-color--Instock_Black;
         }
+    }
+}
+
+#navbar--link {
+    @include md {
+        width: 30%;
     }
 }
