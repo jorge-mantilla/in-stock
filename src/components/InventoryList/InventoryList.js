@@ -9,17 +9,9 @@ function InventoryList(props) {
     const [inventoriesArray, setInventoriesArray] = useState([])
 
     useEffect(() => {
-        if (warehousesArray) {
-            axios.get(`http://localhost:5051/inventories`).then((response) => {
-                const inventories = response.data.map((inventory) => {
-                    const inventoryWarehouse = warehousesArray.find((warehouse) => {
-                        return inventory.warehouse_id === warehouse.id
-                    })
-                    return {...inventory, warehouse_name: inventoryWarehouse.warehouse_name}
-                })
-                setInventoriesArray(inventories)
-            })
-        }
+        axios.get(`http://localhost:5051/inventories`).then((response) => {
+            setInventoriesArray(response.data)
+        })
     }, [warehousesArray]);
     
     return (
