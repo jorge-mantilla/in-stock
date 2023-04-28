@@ -23,13 +23,14 @@ function Warehouses() {
         <>
             {warehousesArray.map((warehouse) => {
                 return (
+
                     <article className="warehouse-data">
                         <div className="warehouse-data__body">
                             <div className="warehouse-data__header">
                                 <div className="warehouse-data__opt">
                                     <div className="warehouse-data__sec">
                                         <h4 className="warehouse-data__title">WAREHOUSE</h4>
-                                        <Link className="warehouse-data__link" to='/warehouseDetails'>
+                                        <Link className="warehouse-data__link" to={`/warehouseDetails/${warehouse.id}`}>
                                             <p className="warehouse-data__link--text">{warehouse.warehouse_name}</p>
                                             <img className="warehouse-data__link--arrow-icon btn--goto" src={ArrowRightIcon} alt="More Details Arrow Icon" />
                                         </Link>

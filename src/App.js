@@ -10,9 +10,9 @@ import NotFound from './components/NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from 'axios';
-//installed axios
-// npm i axios dotenv react-com react-router-dom scss
-//git repo check
+import AddWarehouse from './Pages/AddWarehouse/AddWarehouse';
+import EditWarehouse from './Pages/EditWarehouse/EditWarehouse';
+
 
 function App() {
 
@@ -34,8 +34,10 @@ function App() {
           <Routes>
             <Route path='/' element={<Main />}></Route>
             <Route path='/Warehouses' element={<WarehousePage warehousesArray={warehousesArray} />}></Route>
-            <Route path='/WarehouseDetails' element={<WarehouseDetailsPage />}></Route>
-            <Route path='/Inventory' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
+            <Route path='/WarehouseDetails/:WarehouseId' element={<WarehouseDetailsPage warehousesArray={warehousesArray} />}></Route>
+            <Route path='/AddWarehouse' element={<AddWarehouse />}></Route>
+            <Route path='/EditWarehouse' element={<EditWarehouse />}></Route>
+            <Route path='/Inventories' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
             <Route path='/InventoryDetails' element={<InventoryListPage />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
