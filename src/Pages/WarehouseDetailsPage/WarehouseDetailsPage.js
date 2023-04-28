@@ -8,7 +8,6 @@ function WarehouseDetailsPage(props) {
     const specificWarehouse = warehousesArray.filter((warehouse) => {
         return warehouse.id === WarehouseId
 })
-    console.log("THISTHISTHIS", warehousesArray);
     return (
     <>
         <Link to={`/Warehouse/`}>
