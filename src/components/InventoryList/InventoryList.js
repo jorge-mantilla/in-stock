@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 function InventoryList(props) {
-    const warehousesArray = props.warehousesArray;
-    const deleteHandler = props.deleteHandler;
+    const warehousesArray = props.warehousesArray
+    const deleteHandler = props.deleteHandler
 
     const [inventoriesArray, setInventoriesArray] = useState([])
 
@@ -15,7 +15,7 @@ function InventoryList(props) {
                     const inventoryWarehouse = warehousesArray.find((warehouse) => {
                         return inventory.warehouse_id === warehouse.id
                     })
-                    return {...inventory, warehouse_name: inventoryWarehouse.warehouse_name()}
+                    return {...inventory, warehouse_name: inventoryWarehouse.warehouse_name}
                 })
                 setInventoriesArray(inventories)
             })
