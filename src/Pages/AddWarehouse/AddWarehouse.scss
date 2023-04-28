@@ -1,0 +1,101 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+
+.addForm {
+    display: block;
+    background-color: $primary-color--Instock_White;
+    border-radius: 4px;
+    &__header {
+        font-size: 24px;
+        line-height: 22px;
+        padding: 1.5rem 3rem;
+    }
+    &__subheader {
+        @include font_SubHeader-Mobile;
+        padding: .5rem 1rem;
+        text-align: left;
+    }
+    &__container {
+        display: block;
+    }
+    &__whd-container {
+        padding: 0;
+    }
+    &__whd-border {
+        border: 1px solid $secondary-color--Cloud;
+        width: 100%;
+        margin-top: .5rem;
+    }
+    &__wh-form {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    &__contact-form {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    &__input {
+        border-radius: 20px;
+        border: 1px solid $secondary-color--Cloud;
+        width: 280px;
+        height: 25px;
+        padding: .5rem;
+        margin-bottom: .5rem;
+    }
+    &__label {
+        padding: .1rem 0;
+        @include font_Body-Medium-Mobile;
+        text-align: left;
+    }
+    &__cancel {
+        @include font_Labels-Links-Buttons-Mobile;
+        padding: 1rem;
+    }
+    &__submit {
+        @include font_Labels-Links-Buttons-Mobile;
+        padding: 1rem;
+    }
+    &__button-box {
+        display: flex;
+        background-color: $background-color--Light-Gray;
+        justify-content: space-evenly;
+        padding: 1rem;
+        position: relative;
+    }
+}
+
+.btn--icon {
+    position: absolute;
+    top: 157px;
+    left: 22px;
+}
+
+.btn--plus {
+    position: absolute;
+    top: 37px;
+    left: 162px;
+    height: 16px;
+}
+
+.btn__cancel {
+    background-color: $primary-color--Instock_White;
+    display: flex;
+    justify-content: center;
+    width: 110px;
+    border-radius: 30px;
+    border: 1px solid $secondary-color--Cloud;
+    padding: 10px;
+    margin: 8px;
+    transition: ease-in-out .06s;
+    height: 40px;
+}
+.btn__submit {
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid $secondary-color--Cloud;
+    height: 40px;
+}
