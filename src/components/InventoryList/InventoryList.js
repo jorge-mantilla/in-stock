@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
-function InventoryList() {
+function InventoryList({deleteHandler}) {
     const [inventoriesArray, setInventoriesArray] = useState([])
 
     useEffect(() => {
@@ -24,7 +24,7 @@ function InventoryList() {
                     <li>{inventory.status}</li>
                     <li>{inventory.quantity}</li>
                     <li>{inventory.warehouse_id}</li>
-                    <li>ACTIONS</li>
+                    <button onClick={()=>deleteHandler(inventory)}>Delete</button>
                 </ul>
                 )
             })
