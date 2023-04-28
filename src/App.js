@@ -11,6 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import AddWarehouse from './Pages/AddWarehouse/AddWarehouse';
+import EditWarehouse from './Pages/EditWarehouse/EditWarehouse';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path='/Warehouses' element={<WarehousePage warehousesArray={warehousesArray} />}></Route>
             <Route path='/WarehouseDetails' element={<WarehouseDetailsPage />}></Route>
             <Route path='/AddWarehouse' element={<AddWarehouse />}></Route>
+            <Route path='/EditWarehouse' element={<EditWarehouse />}></Route>
             <Route path='/Inventories' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
             <Route path='/InventoryDetails' element={<InventoryListPage />}></Route>
             <Route path="*" element={<NotFound />} />
