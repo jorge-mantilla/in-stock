@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function InventoryList(props) {
     const warehousesArray = props.warehousesArray;
@@ -16,7 +16,7 @@ function InventoryList(props) {
                         console.log("this is my WAREHOUSE", warehouse)
                         return inventory.warehouse_id === warehouse.id
                     })
-                    return {...inventory, warehouse_name: inventoryWarehouse.warehouse_name}
+                    return {...inventory, warehouse_name: inventoryWarehouse.warehouse_name()}
                 })
                 setInventoriesArray(inventories)
             })
