@@ -22,22 +22,22 @@ function EditWarehouse() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await fetch("/api/warehouse", {
-        method: "POST",
+        method: "PUT", // Change method to PUT
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
+  
       // handle successful response
-      console.log("Warehouse eddited successfully!");
+      console.log("Warehouse edited successfully!");
     } catch (error) {
-      console.error("Error edditing warehouse:", error);
+      console.error("Error editing warehouse:", error);
     }
   };
 
