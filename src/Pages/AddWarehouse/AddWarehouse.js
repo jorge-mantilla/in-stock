@@ -1,5 +1,7 @@
 import "./AddWarehouse.scss";
 import { useState } from "react";
+import AddIcon from '../../assets/Icons/arrow_back-24px.svg';
+import PlusIcon from '../../assets/Icons/add-24px.svg'
 // import { useParams } from "react-router-dom";
 
 function AddWarehouse() {
@@ -43,7 +45,9 @@ function AddWarehouse() {
     <section className="addForm__container">
       <article className="addForm">
         <h1 className="addForm__header">Add New Warehouse</h1>
+        <img id='warehouse__btn--icon' className="btn--icon" src={AddIcon} alt="Add Icon" />
 
+        <div className="addForm__whd-border"></div>
         <div className="addForm__whd-container">
           <h2 className="addForm__subheader">Warehouse Details</h2>
 
@@ -90,6 +94,7 @@ function AddWarehouse() {
             </form>
         </div>
         <div>
+          <div className="addForm__whd-border"></div>
             <h2 className="addForm__subheader">Contact Details</h2>
 
         <form className="addForm__contact-form">
@@ -136,8 +141,9 @@ function AddWarehouse() {
           </form>
         </div>
         <div className="addForm__button-box">
-          <button className="addForm__cancel">Cancel</button>
-          <button className="addForm__submit" type="submit">
+          <button className="btn__cancel">Cancel</button>
+          <img className="btn--plus" src={PlusIcon} alt="Add Icon" />
+          <button className="btn btn__submit" type="submit">
             Add Warehouse
           </button>
         </div>
