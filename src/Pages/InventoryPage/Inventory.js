@@ -9,7 +9,7 @@ function InventoryPage() {
 
     function deleteHandler(item) {
         console.log("clicked:", item);
-        setShowInventoryDelete(true);
+        setShowInventoryDelete(!showInventoryDelete);
     }
 
     return (
@@ -29,7 +29,7 @@ function InventoryPage() {
                 </form>
             </div>
             <InventoryList deleteHandler={deleteHandler} />
-            {showInventoryDelete && <InventoryDelete />}
+            {showInventoryDelete && <InventoryDelete deleteHandler={deleteHandler}/>}
         </>
     )
 }

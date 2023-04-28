@@ -1,8 +1,9 @@
 import './InventoryDelete.css';
+import { Link } from 'react-router-dom';
 
 //try using a useState
 
-function InventoryDelete() {
+function InventoryDelete({deleteHandler}) {
 
     return (
         <div className='container'>
@@ -11,7 +12,7 @@ function InventoryDelete() {
                 <p>Please confirm that you’d like to delete Television from the inventory list.
                     You won’t be able to undo this action.</p>
                 <div>
-                    <button>Cancel</button>
+                    <button onClick={deleteHandler}>Cancel</button>
                     <button>Delete</button>
                 </div>
             </div>
