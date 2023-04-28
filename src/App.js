@@ -31,7 +31,7 @@ function App() {
             <Route path='/' element={<Main />}></Route>
             <Route path='/Warehouses' element={<WarehousePage warehousesArray={warehousesArray} />}></Route>
             <Route path='/WarehouseDetails' element={<WarehouseDetailsPage />}></Route>
-            <Route path='/Inventory' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
+            <Route path='/Inventories' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
             <Route path='/InventoryDetails' element={<InventoryListPage />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
