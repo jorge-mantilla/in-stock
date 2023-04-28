@@ -8,9 +8,6 @@ import NotFound from './components/NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from 'axios';
-//installed axios
-// npm i axios dotenv react-com react-router-dom scss
-//git repo check
 
 function App() {
 
@@ -29,7 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main/>}></Route>
         <Route path='/Warehouse' element={<WarehousePage warehousesArray={warehousesArray} />}></Route>
-        <Route path='/WarehouseDetails' element={<WarehouseDetailsPage />}></Route>
+        <Route path='/WarehouseDetails/:WarehouseId' element={<WarehouseDetailsPage warehousesArray={warehousesArray} />}></Route>
         <Route path='/Inventory' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
         <Route path='/InventoryDetails' element={<InventoryListPage />}></Route>
         <Route path="*" element={<NotFound />} />

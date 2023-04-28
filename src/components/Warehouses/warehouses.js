@@ -4,15 +4,13 @@ function Warehouses(props) {
     
     const warehousesArray = props.warehousesArray
 
-    console.log("this is my WAREARRAY at WAREHOUSES", warehousesArray);
-
     return (
     <>
         <div>
             {warehousesArray.map((warehouse) => {
                 return (
-                <ul>
-                    <Link to={'/WarehouseDetails'}>
+                <ul key={warehouse.id}>
+                    <Link to={`/WarehouseDetails/${warehouse.id}`}>
                     <li>{warehouse.warehouse_name}</li>
                     </Link>
                     <li>{warehouse.address}</li>
