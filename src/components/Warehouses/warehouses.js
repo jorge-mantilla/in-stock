@@ -23,6 +23,7 @@ function Warehouses() {
         <>
             {warehousesArray.map((warehouse) => {
                 return (
+
                     <article className="warehouse-data">
                         <div className="warehouse-data__body">
                             <div className="warehouse-data__header">
