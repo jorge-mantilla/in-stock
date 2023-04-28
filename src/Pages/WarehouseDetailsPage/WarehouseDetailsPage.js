@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 function WarehouseDetailsPage(props) {
     const warehousesArray = props.warehousesArray
     const {WarehouseId} = useParams()
+    console.log("THIS ISISISISIS", WarehouseId);
 
     const specificWarehouse = warehousesArray.filter((warehouse) => {
         return warehouse.id === WarehouseId

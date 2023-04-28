@@ -17,7 +17,6 @@ function App() {
 
   useEffect(() => {
     axios.get(`http://localhost:5051/warehouses`).then((response) => {
-      console.log("APP JS", response.data);
       setWarehousesArray(response.data)
     })
   }, []);
