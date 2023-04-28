@@ -1,6 +1,6 @@
-import './InventoryDelete.scss';
+import './DeleteModal.scss';
 
-function InventoryDelete({ deleteHandler, inventory, handleDelete, context }) {
+function Delete({ deleteHandler, inventory, handleDelete, context }) {
     console.log(inventory);
 
     let deleteHeader = '';
@@ -31,5 +31,5 @@ function InventoryDelete({ deleteHandler, inventory, handleDelete, context }) {
     )
 }
 
-export default InventoryDelete;
+export default Delete;
 
