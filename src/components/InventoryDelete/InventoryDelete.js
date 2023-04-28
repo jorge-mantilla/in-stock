@@ -1,5 +1,5 @@
 import './InventoryDelete.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 //try using a useState
 

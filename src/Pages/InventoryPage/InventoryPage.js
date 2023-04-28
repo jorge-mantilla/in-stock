@@ -3,8 +3,9 @@ import InventoryList from "../../components/InventoryList/InventoryList";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 
-function InventoryPage() {
+function InventoryPage(props) {
 
+    const warehousesArray = props.warehousesArray;
     const [showInventoryDelete, setShowInventoryDelete] = useState(false);
 
     function deleteHandler(item) {
@@ -28,7 +29,7 @@ function InventoryPage() {
                     </div>
                 </form>
             </div>
-            <InventoryList deleteHandler={deleteHandler} />
+            <InventoryList  warehousesArray={warehousesArray}/>
             {showInventoryDelete && <InventoryDelete deleteHandler={deleteHandler}/>}
         </>
     )

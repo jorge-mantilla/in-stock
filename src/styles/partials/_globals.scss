@@ -26,6 +26,10 @@ $supporting-color--Red: #c94515;
     color: $primary-color--Instock_Black;
 }
 
+html,
+body {
+    background-color: $background-color--Light-Gray;
+}
 
 h1 {
     font-size: 28px;
@@ -50,4 +54,125 @@ h4 {
 p {
     font-size: 11px;
     line-height: 16px;
+}
+
+.logo {
+    padding: 12px 16px;
+
+    &--link {
+        display: flex;
+    }
+}
+
+// BUTTON GENERAL STYLING
+.btn {
+    background-color: $primary-color--Instock_Indigo;
+    color: $primary-color--Instock_White;
+    display: flex;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 8px;
+    transition: ease-in-out .06s;
+
+    @include md {
+        border-radius: 20px;
+        width: 81px;
+        height: 38px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    & img {
+        width: 20px;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        @include md {
+            background-color: #2455c6;
+        }
+    }
+
+    &--return {
+        padding: 8px;
+        transition: ease-in-out 0.15s;
+
+        &:hover {
+            @include md {
+                transform: translateX(-4px);
+            }
+        }
+    }
+
+    // &--goto {
+    //     padding: 4px;
+    //     transition: ease-in-out 0.15s;
+
+    //     &:hover {
+    //         @include md {
+    //             transform: translateX(4px);
+    //         }
+    //     }
+    // }
+
+    // Styling of All Button Text That Dissapears Leaving Only The Icon in Mobile
+    &--text {
+        @include font_Labels-Links-Buttons-Desktop;
+        color: $primary-color--Instock_White;
+    }
+
+    // Styling of All Button Icons
+    &--icon {
+        width: 15px;
+    }
+
+    // Styling of All Button Text That Dissapears Leaving Only The Icon in Mobile
+    &--icon-text {
+        @include font_Labels-Links-Buttons-Desktop;
+        color: $primary-color--Instock_White;
+        display: none;
+
+        @include md {
+            display: block;
+        }
+    }
+}
+
+// ACTIVE AND INACTIVE PAGE LINK TO CURRENT PAGE -NavBar Warehouses & Inventory-
+.current-page {
+
+    &--active {
+        background-color: $primary-color--Instock_Black;
+    }
+
+    &--inactive {
+        background-color: $background-color--Graphite;
+    }
+}
+
+// IN-STOCK AND OUT-OF-STOCK NOTIFICATIONS
+.status {
+
+    &-active,
+    &-inactive {
+        @include font_Table-Header-Mobile;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        border-radius: 20px;
+        padding: 4px 8px;
+    }
+
+    &-active {
+        color: $supporting-color--Green;
+        background-color: rgba(21, 132, 99, 0.07);
+        width: 70px;
+    }
+
+    &-inactive {
+        color: $supporting-color--Red;
+        background-color: rgba(201, 69, 21, 0.07);
+        width: 100px;
+    }
 }
