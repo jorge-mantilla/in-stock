@@ -1,9 +1,18 @@
 import InventoryList from "../../components/InventoryList/InventoryList";
 import { Link } from 'react-router-dom';
+import { useState } from "react";
+import InventoryDelete from "../../components/InventoryDelete/InventoryDelete"
 
 function InventoryPage(props) {
 
     const warehousesArray = props.warehousesArray
+
+    const [showInventoryDelete, setShowInventoryDelete] = useState(false);
+
+    function deleteHandler(item) {
+        console.log("clicked:", item);
+        setShowInventoryDelete(!showInventoryDelete);
+    }
 
     return (
     <>
@@ -21,7 +30,8 @@ function InventoryPage(props) {
                 </div>
             </form>
         </div>
-        <InventoryList warehousesArray={warehousesArray} />
+        <InventoryList warehousesArray={warehousesArray} deleteHandler={deleteHandler} />
+        {showInventoryDelete && <InventoryDelete deleteHandler={deleteHandler}/>}
     </>
 );
 }
