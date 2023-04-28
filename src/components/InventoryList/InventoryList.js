@@ -10,9 +10,10 @@ function InventoryList(props) {
 
     useEffect(() => {
         axios.get(`http://localhost:5051/inventories`).then((response) => {
-            setInventoriesArray(response.data)
+        console.log(response);    
+        setInventoriesArray(response.data)
         })
-    }, [inventoriesArray]);
+    }, []);
     
     return (
     <>

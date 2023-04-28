@@ -44,7 +44,7 @@ function InventoryPage(props) {
             </form>
         </div>
         <InventoryList warehousesArray={warehousesArray} deleteHandler={deleteHandler} />
-        {showInventoryDelete && <InventoryDelete deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} />}
+        {showInventoryDelete && <InventoryDelete deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} context="inventory"/>}
     </>
 );
 }
