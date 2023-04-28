@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import Logo from '../../assets/Logo/InStock-Logo.svg';
+// import { Link } from 'react-router-dom';
+// import Logo from '../../assets/Logo/InStock-Logo.svg';
 import '../Footer/Footer.scss';
 
 //installed axios
