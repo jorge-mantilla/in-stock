@@ -1,0 +1,59 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+
+.addForm {
+    display: block;
+    &__header {
+        font-size: 24px;
+        line-height: 22px;
+        padding: 1.5rem;
+    }
+    &__subheader {
+        @include font_SubHeader-Mobile;
+        border-top: 1px solid $secondary-color--Cloud;
+        padding: .5rem 0;
+        text-align: left;
+    }
+    &__container {
+        display: block;
+    }
+    &__whd-container {
+        padding: 0;
+    }
+    &__wh-form {
+        display: flex;
+        flex-direction: column;
+    }
+    &__contact-form {
+        display: flex;
+        flex-direction: column;
+    }
+    &__input {
+        border-radius: 20px;
+        border: 1px solid $secondary-color--Cloud;
+        width: 280px;
+        height: 25px;
+        padding: .5rem;
+        margin-bottom: .5rem;
+    }
+    &__label {
+        padding: .1rem 0;
+        @include font_Body-Medium-Mobile;
+        text-align: left;
+    }
+    &__cancel {
+        @include font_Labels-Links-Buttons-Mobile;
+        padding: 1rem;
+    }
+    &__submit {
+        @include font_Labels-Links-Buttons-Mobile;
+        padding: 1rem;
+    }
+    &__button-box {
+        display: flex;
+        background-color: $secondary-color--Cloud;
+        justify-content: space-evenly;
+        padding: 1rem;
+    }
+}

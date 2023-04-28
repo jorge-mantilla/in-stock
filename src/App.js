@@ -6,9 +6,7 @@ import InventoryPage from './Pages/InventoryPage/Inventory';
 import InventoryListPage from './Pages/InventoryDetails/InventoryDetails';
 import NotFound from './components/NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
-//installed axios
-// npm i axios dotenv react-com react-router-dom scss
-//git repo check
+import AddWarehouse from './Pages/AddWarehouse/AddWarehouse';
 
 function App() {
   return (
@@ -16,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main/>}></Route>
         <Route path='/Warehouse' element={<WarehousePage />}></Route>
+        <Route path='/AddWarehouse' element={<AddWarehouse />}></Route>
         <Route path='/WarehouseDetails' element={<WarehouseDetailsPage />}></Route>
         <Route path='/Inventory' element={<InventoryPage />}></Route>
         <Route path='/InventoryDetails' element={<InventoryListPage />}></Route>
