@@ -1,19 +1,17 @@
-import './InventoryDelete.css';
-// import { Link } from 'react-router-dom';
+import './InventoryDelete.scss';
 
-//try using a useState
-
-function InventoryDelete({deleteHandler}) {
-
+function InventoryDelete({ deleteHandler, inventory, handleDelete }) {
+    console.log(inventory);
     return (
         <div className='container'>
             <div className='body'>
-                <h1>Delete Television inventory item?</h1>
-                <p>Please confirm that you’d like to delete Television from the inventory list.
+
+                <h1>Delete {inventory.item_name} item?</h1>
+                <p>Please confirm that you’d like to delete {inventory.item_name} from the inventory list.
                     You won’t be able to undo this action.</p>
                 <div>
                     <button onClick={deleteHandler}>Cancel</button>
-                    <button>Delete</button>
+                    <button onClick={() => handleDelete(inventory)}>Delete</button>
                 </div>
             </div>
         </div>
@@ -21,3 +19,4 @@ function InventoryDelete({deleteHandler}) {
 }
 
 export default InventoryDelete;
+
