@@ -1,0 +1,58 @@
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/globals' as *;
+
+.notfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: $background-color--Light-Gray;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 90%;
+        height: 100vh;
+        padding: 60px 0px;
+        background-color: $background-color--Light-Gray;
+    }
+
+    &__title {
+        @include font_Header-Desktop;
+        color: $primary-color--Instock_Indigo;
+        font-size: 46px;
+        padding: 16px 0px;
+
+        @include md {
+            font-size: 80px;
+            padding: 24px 0px;
+        }
+    }
+
+    &__text {
+        @include font_SubHeader-Desktop;
+        text-align: center;
+        margin: 16px 0px;
+
+        @include md {
+            font-size: 30px;
+            margin: 24px 0px;
+        }
+    }
+
+    &__img {
+        pointer-events: none;
+        width: 230px;
+        opacity: 80%;
+        margin: 16px 0px;
+
+        @include md {
+            width: 260px;
+        }
+    }
+}
