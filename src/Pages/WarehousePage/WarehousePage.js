@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../WarehousePage/WarehousePage.scss';
 
-import Warehouses from "../../components/Warehouses/Warehouses.js";
+import Warehouses from "../../components/Warehouses/warehouses.js";
 import AddIcon from '../../assets/Icons/add-24px.svg';
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 
