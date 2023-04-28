@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 
-import '../WarehousePage/Warehouse.scss';
+import '../WarehousePage/WarehousePage.scss';
 
 import Warehouses from "../../components/Warehouses/Warehouses.js";
 import AddIcon from '../../assets/Icons/add-24px.svg';
