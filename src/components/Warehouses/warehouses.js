@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 import '../Warehouses/Warehouses.scss';
@@ -7,6 +5,8 @@ import '../Warehouses/Warehouses.scss';
 import ArrowRightIcon from '../../assets/Icons/chevron_right-24px.svg';
 import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/Icons/edit-blue-24px.svg';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 
