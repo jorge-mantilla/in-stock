@@ -50,14 +50,6 @@
         @include font_Body-Medium-Mobile;
         text-align: left;
     }
-    &__cancel {
-        @include font_Labels-Links-Buttons-Mobile;
-        padding: 1rem;
-    }
-    &__submit {
-        @include font_Labels-Links-Buttons-Mobile;
-        padding: 1rem;
-    }
     &__button-box {
         display: flex;
         background-color: $background-color--Light-Gray;
@@ -91,6 +83,7 @@
     margin: 8px;
     transition: ease-in-out .06s;
     height: 40px;
+    @include font_Labels-Links-Buttons-Mobile;
 }
 .btn__submit {
     width: 125px;
@@ -98,4 +91,5 @@
     justify-content: center;
     border: 1px solid $secondary-color--Cloud;
     height: 40px;
+    @include font_Labels-Links-Buttons-Mobile;
 }
