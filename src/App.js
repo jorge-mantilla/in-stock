@@ -10,9 +10,6 @@ import NotFound from './components/NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from 'axios';
-//installed axios
-// npm i axios dotenv react-com react-router-dom scss
-//git repo check
 
 function App() {
 
