@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function InventoryPage(props) {
 
     const warehousesArray = props.warehousesArray
+    const inventoriesArray = props.inventoriesArray
 
     return (
     <>
@@ -21,7 +22,7 @@ function InventoryPage(props) {
                 </div>
             </form>
         </div>
-        <InventoryList warehousesArray={warehousesArray} />
+        <InventoryList inventoriesArray={inventoriesArray} warehousesArray={warehousesArray} />
     </>
 );
 }

@@ -3,15 +3,9 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 function InventoryList(props) {
-    const warehousesArray = props.warehousesArray
 
-    const [inventoriesArray, setInventoriesArray] = useState([])
+    const inventoriesArray = props.inventoriesArray
 
-    useEffect(() => {
-        axios.get(`http://localhost:5051/inventories`).then((response) => {
-            setInventoriesArray(response.data)
-        })
-    }, [warehousesArray]);
     
     return (
     <>

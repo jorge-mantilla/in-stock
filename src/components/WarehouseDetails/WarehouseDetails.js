@@ -4,7 +4,6 @@ function WarehouseDetails(props) {
 
     const specificWarehouse = props.specificWarehouse
 
-    // console.log("HELLLOOOOOO", specificWarehouse);
 
     return (
     <>
