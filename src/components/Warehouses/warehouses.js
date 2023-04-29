@@ -54,7 +54,7 @@ function Warehouses() {
                             </div>
                             <div className="warehouse-data__footer">
                                 <img src={DeleteIcon} alt="Delete Icon" />
-                                <Link className="warehouse-data__footer--icon" to={'/EDIT THIS SPECIFIC WAREHOUSE'}>
+                                <Link className="warehouse-data__footer--icon" to={'/EditWarehouse'}>
                                     < img src={EditIcon} alt="Edit Icon" />
                                 </Link>
                             </div>

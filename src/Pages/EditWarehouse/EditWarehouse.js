@@ -1,7 +1,7 @@
 import "./EditWarehouse.scss";
 import { useState } from "react";
 import AddIcon from '../../assets/Icons/arrow_back-24px.svg';
-import PlusIcon from '../../assets/Icons/add-24px.svg'
+import { Link } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
 function EditWarehouse() {
@@ -44,9 +44,10 @@ function EditWarehouse() {
   return (
     <section className="addForm__container">
       <article className="addForm">
-        <h1 className="addForm__header">Edit New Warehouse</h1>
+        <h1 className="addForm__header">Edit Warehouse</h1>
+        <Link to='/warehouses'>
         <img id='warehouse__btn--icon' className="btn--icon" src={AddIcon} alt="Add Icon" />
-
+        </Link>
         <div className="addForm__whd-border"></div>
         <div className="addForm__whd-container">
           <h2 className="addForm__subheader">Warehouse Details</h2>
@@ -142,7 +143,6 @@ function EditWarehouse() {
         </div>
         <div className="addForm__button-box">
           <button className="btn__cancel">Cancel</button>
-          <img className="btn--plus" src={PlusIcon} alt="Add Icon" />
           <button className="btn btn__submit" type="submit">
             Save
           </button>
