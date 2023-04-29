@@ -9,17 +9,17 @@ import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/Icons/edit-blue-24px.svg';
 
 function InventoryList(props) {
-    const [inventoryArray, setinventoryArray] = useState([])
+    const [InventoryArray, setInventoryArray] = useState([])
 
     useEffect(() => {
         axios.get(`http://localhost:5051/inventories`).then((response) => {
-            setInventoriesArray(response.data)
+            setInventoryArray(response.data)
         })
-    }, [warehousesArray]);
+    }, []);
 
     return (
         <>
-            {inventoryArray.map((inventory) => {
+            {InventoryArray.map((inventory) => {
                 return (
                     <article className="inventory-data">
                         <div className="inventory-data__body">
