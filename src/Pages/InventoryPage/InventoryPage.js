@@ -1,15 +1,37 @@
 import InventoryList from "../../components/InventoryList/InventoryList";
 import { Link } from 'react-router-dom';
-
 import '../InventoryPage/InventoryPage.scss';
 
 // import inventory from "../../components/inventory/inventory.js";
 import AddIcon from '../../assets/Icons/add-24px.svg';
 import SortIcon from "../../assets/Icons/sort-24px.svg";
+import { useState } from "react";
+import DeleteModal from "../../components/DeleteModal/DeleteModal";
+import axios from "axios";
 
 function InventoryPage(props) {
 
     const inventoryArray = props.inventoryArray
+
+    const [showDelete, setShowDelete] = useState(false);
+    const [selectedInventory, setSelectedInventory] = useState(null);
+
+    function deleteHandler(item) {
+        console.log("clicked:", item);
+        setSelectedInventory(item);
+        setShowDelete(!showDelete);
+    }
+
+    function handleDelete(inventory) {
+        axios.delete(`http://localhost:5051/inventories/${inventory.id}`)
+            .then(() => {
+                console.log(`Inventory with id: ${inventory.item_name} has been deleted`);
+                setShowDelete(false);
+            })
+            .catch((err) => {
+                console.error(`Error deleting Inventory ${inventory.item_name}: ${err}`);
+            });
+    }
 
     return (
         <>
@@ -67,9 +89,12 @@ function InventoryPage(props) {
                         </ul>
                     </section>
                 </div >
-                <InventoryList />
+                <InventoryList deleteHandler={deleteHandler} />
+                {showDelete && <DeleteModal deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} context="inventory"/>}
             </section >
         </>
     );
 }
 export default InventoryPage;
+
+// warehousesArray={warehousesArray}
