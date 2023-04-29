@@ -24,7 +24,7 @@ function Warehouses() {
             {warehousesArray.map((warehouse) => {
                 return (
 
-                    <article className="warehouse-data">
+                    <article className="warehouse-data" key={warehouse.id} >
                         <div className="warehouse-data__body">
                             <div className="warehouse-data__header">
                                 <div className="warehouse-data__opt">
