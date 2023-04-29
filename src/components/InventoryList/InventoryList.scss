@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     border-top: 1px solid $secondary-color--Cloud;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.05);
 
     &:nth-of-type(2n) {
         background-color: $background-color--Light-Gray;
@@ -117,4 +117,8 @@
 
         }
     }
+}
+
+#footer--icon {
+    cursor: pointer;
 }

@@ -88,9 +88,9 @@ function InventoryPage(props) {
                             </li>
                         </ul>
                     </section>
+                    <InventoryList deleteHandler={deleteHandler} />
+                    {showDelete && <DeleteModal deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} context="inventory" />}
                 </div >
-                <InventoryList deleteHandler={deleteHandler} />
-                {showDelete && <DeleteModal deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} context="inventory"/>}
             </section >
         </>
     );
