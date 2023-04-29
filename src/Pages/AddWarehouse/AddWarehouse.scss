@@ -7,26 +7,79 @@
     background-color: $primary-color--Instock_White;
     border-radius: 4px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 95vw;
+    @include md {
+        width: 88vw;
+    }
+    @include lg {
+        width: 78vw;
+    }
+
     &__header {
-        font-size: 24px;
-        line-height: 22px;
+        font-size: 1.5rem;
+        line-height: 1.375rem;
         padding: 1.5rem 3rem;
+        width: 95vw;
+        @include md {
+            width: 88vw;
+        }
+        @include lg {
+            width: 78vw;
+        }
+    }
+    &__tablet-header-box {
+        @include md {
+            display: inline-flex;
+            border-bottom: 1px solid $secondary-color--Cloud;
+        }
+    }
+    &__tablet-form-box {
+        @include md {
+            display: inline-flex;
+            border-right: 1px solid $secondary-color--Cloud;
+            padding-right: 5%;
+        }
+    }
+    &__tablet-form-contact-box {
+        @include md {
+            display: inline-flex;
+        }
+    }
+    &__tablet-wrapper {
+        @include md {
+            display: inline-flex;
+            width: 90vw;
+            justify-content: space-evenly;
+        }
     }
     &__subheader {
         @include font_SubHeader-Mobile;
         padding: .5rem 1rem;
         text-align: left;
+        @include md {
+            display: flex;
+        }
     }
     &__container {
         display: block;
+        @include md {
+            display: flex;
+        }
     }
     &__whd-container {
         padding: 0;
     }
     &__whd-border {
         border: 1px solid $secondary-color--Cloud;
-        width: 100%;
+        width: 95vw;
         margin-top: .5rem;
+        @include md {
+            display: none;
+            width: 88vw;
+        }
+        @include lg {
+            width: 78vw;
+        }
     }
     &__wh-form {
         display: flex;
@@ -41,8 +94,8 @@
     &__input {
         border-radius: 20px;
         border: 1px solid $secondary-color--Cloud;
-        width: 280px;
-        height: 25px;
+        width: 17.5rem;
+        height: 1.5625rem;
         padding: .5rem;
         margin-bottom: .5rem;
     }
@@ -57,40 +110,44 @@
         justify-content: space-evenly;
         padding: 1rem;
         position: relative;
+        @include md {
+            justify-content: end;
+        }
     }
 }
 
 .btn--icon {
     position: absolute;
-    top: 157px;
-    left: 22px;
+    top: 9.8125rem;
+    left: 1.375rem;
 }
 
 .btn--plus {
     position: absolute;
-    top: 37px;
-    left: 162px;
-    height: 16px;
+    top: 2.3125rem;
+    left: 10.425rem;
+    height: 1rem;
 }
 
 .btn__cancel {
     background-color: $primary-color--Instock_White;
     display: flex;
     justify-content: center;
-    width: 110px;
-    border-radius: 30px;
+    width: 6.875rem;
+    border-radius: 1.875rem;
     border: 1px solid $secondary-color--Cloud;
-    padding: 10px;
-    margin: 8px;
+    padding: .625rem;
+    margin: .5rem;
     transition: ease-in-out .06s;
-    height: 40px;
+    height: 2.5rem;
     @include font_Labels-Links-Buttons-Mobile;
 }
 .btn__submit {
-    width: 125px;
+    width: 7.8125rem;
     display: flex;
     justify-content: center;
     border: 1px solid $secondary-color--Cloud;
-    height: 40px;
+    height: 2.5rem;
+    position: relative;
     @include font_Labels-Links-Buttons-Mobile;
 }

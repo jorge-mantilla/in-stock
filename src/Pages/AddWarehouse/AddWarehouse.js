@@ -1,7 +1,7 @@
 import "./AddWarehouse.scss";
 import { useState } from "react";
-import AddIcon from '../../assets/Icons/arrow_back-24px.svg';
-import PlusIcon from '../../assets/Icons/add-24px.svg'
+import AddIcon from "../../assets/Icons/arrow_back-24px.svg";
+import PlusIcon from "../../assets/Icons/add-24px.svg";
 import { Link } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
@@ -43,12 +43,20 @@ function AddWarehouse() {
   };
 
   return (
-    <section className="addForm__container">
       <article className="addForm">
+        <div className="addForm__tablet-header-box">
         <h1 className="addForm__header">Add New Warehouse</h1>
-        <Link to='../warehouses'>
-        <img id='warehouse__btn--icon' className="btn--icon" src={AddIcon} alt="Add Icon" />
+        <Link to="../warehouses">
+          <img
+            id="warehouse__btn--icon"
+            className="btn--icon"
+            src={AddIcon}
+            alt="Add Icon"
+          />
         </Link>
+        </div>
+        <div className="addForm__tablet-wrapper">
+        <div className="addForm__tablet-form-box">
         <div className="addForm__whd-border"></div>
         <div className="addForm__whd-container">
           <h2 className="addForm__subheader">Warehouse Details</h2>
@@ -93,14 +101,15 @@ function AddWarehouse() {
               onChange={handleInputChange}
               className="addForm__input"
             />
-            </form>
+          </form>
         </div>
-        <div>
+        </div>
+        <div className="addForm__tablet-form-contact-box">
           <div className="addForm__whd-border"></div>
-            <h2 className="addForm__subheader">Contact Details</h2>
+          <div className="addForm__whd-container">
+          <h2 className="addForm__subheader">Contact Details</h2>
 
-        <form className="addForm__contact-form">
-
+          <form className="addForm__contact-form">
             <label className="addForm__label">Contact Name</label>
             <input
               type="text"
@@ -141,6 +150,8 @@ function AddWarehouse() {
               className="addForm__input"
             />
           </form>
+          </div>
+        </div>
         </div>
         <div className="addForm__button-box">
           <button className="btn__cancel">Cancel</button>
@@ -150,7 +161,6 @@ function AddWarehouse() {
           </button>
         </div>
       </article>
-    </section>
   );
 }
 
