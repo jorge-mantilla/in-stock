@@ -6,6 +6,8 @@
     display: block;
     background-color: $primary-color--Instock_White;
     border-radius: 4px;
+    position: relative;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
     &__header {
         font-size: 24px;
         line-height: 22px;
@@ -61,15 +63,8 @@
 
 .btn--icon {
     position: absolute;
-    top: 157px;
-    left: 22px;
-}
-
-.btn--plus {
-    position: absolute;
-    top: 37px;
-    left: 162px;
-    height: 16px;
+    top: 30px;
+    left: 21px;
 }
 
 .btn__cancel {
@@ -85,6 +80,7 @@
     height: 40px;
     @include font_Labels-Links-Buttons-Mobile;
 }
+
 .btn__submit {
     width: 125px;
     display: flex;

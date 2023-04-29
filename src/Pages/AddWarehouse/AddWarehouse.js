@@ -2,6 +2,7 @@ import "./AddWarehouse.scss";
 import { useState } from "react";
 import AddIcon from '../../assets/Icons/arrow_back-24px.svg';
 import PlusIcon from '../../assets/Icons/add-24px.svg'
+import { Link } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
 function AddWarehouse() {
@@ -45,8 +46,9 @@ function AddWarehouse() {
     <section className="addForm__container">
       <article className="addForm">
         <h1 className="addForm__header">Add New Warehouse</h1>
+        <Link to='../warehouses'>
         <img id='warehouse__btn--icon' className="btn--icon" src={AddIcon} alt="Add Icon" />
-
+        </Link>
         <div className="addForm__whd-border"></div>
         <div className="addForm__whd-container">
           <h2 className="addForm__subheader">Warehouse Details</h2>
