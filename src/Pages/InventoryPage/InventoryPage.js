@@ -1,6 +1,5 @@
 import InventoryList from "../../components/InventoryList/InventoryList";
 import { Link } from 'react-router-dom';
-
 import '../InventoryPage/InventoryPage.scss';
 
 // import inventory from "../../components/inventory/inventory.js";
@@ -90,9 +89,12 @@ function InventoryPage(props) {
                         </ul>
                     </section>
                 </div >
-                <InventoryList />
+                <InventoryList deleteHandler={deleteHandler} />
+                {showDelete && <DeleteModal deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} context="inventory"/>}
             </section >
         </>
     );
 }
 export default InventoryPage;
+
+// warehousesArray={warehousesArray}
