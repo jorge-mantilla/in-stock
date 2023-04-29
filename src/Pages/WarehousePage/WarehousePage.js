@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../WarehousePage/WarehousePage.scss';
 
-import Warehouses from "../../components/Warehouses/Warehouses.js";
+import Warehouses from "../../components/Warehouses/warehouses.js";
 import AddIcon from '../../assets/Icons/add-24px.svg';
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 
@@ -29,7 +29,7 @@ function WarehousePage() {
                                 </div>
                             </div>
                             <div className="warehouses__sec">
-                                <Link className="warehouses__upload-link" to={'/Warehouses-add'}>
+                                <Link className="warehouses__upload-link" to={'/AddWarehouse'}>
                                     <button id='warehouse__btn' className="btn" type="submit">
                                         <img id='warehouse__btn--icon' className="btn--icon" src={AddIcon} alt="Add Icon" />
                                         <p className="btn--text">Add New Warehouse</p>
