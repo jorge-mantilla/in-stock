@@ -1,4 +1,5 @@
 import './DeleteModal.scss';
+import IconClose from '../../assets/Icons/close-24px.svg'
 
 function Delete({ deleteHandler, inventory, handleDelete, context }) {
     console.log(inventory);
@@ -7,7 +8,7 @@ function Delete({ deleteHandler, inventory, handleDelete, context }) {
     let deleteBody = '';
 
     if (context === 'inventory') {
-        deleteHeader = `Delete ${inventory.item_name} item?`;
+        deleteHeader = `Delete ${inventory.item_name} inventory item?`;
         deleteBody = `Please confirm that you’d like to delete ${inventory.item_name} from the inventory list.
         You won’t be able to undo this action.`;
     } else if (context === 'warehouse') {
@@ -17,15 +18,17 @@ function Delete({ deleteHandler, inventory, handleDelete, context }) {
     }
 
     return (
-        <div className='container'>
-            <div className='body'>
-                <h1>{deleteHeader}</h1>
-                <p>{deleteBody}</p>
-                <div>
-                    <button onClick={deleteHandler}>Cancel</button>
-                    <button onClick={() => handleDelete(inventory)}>Delete</button>
+        <div className='delete-container'>
+            <div className='content'>
+                <div className='content__textbox'>
+                <img className= 'content_icon'src={IconClose}/>
+                    <h2>{deleteHeader}</h2>
+                    <p>{deleteBody}</p>
                 </div>
-
+                <div className='content__btns'>
+                    <button onClick={deleteHandler} className='content__btns-cancel'>Cancel</button>
+                    <button onClick={() => handleDelete(inventory)} className='content__btns-delete'>Delete</button>
+                </div>
             </div>
         </div>
     )
