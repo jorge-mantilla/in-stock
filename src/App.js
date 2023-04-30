@@ -5,14 +5,13 @@ import Footer from './components/Footer/Footer';
 import WarehousePage from './Pages/WarehousePage/WarehousePage';
 import WarehouseDetailsPage from './Pages/WarehouseDetailsPage/WarehouseDetailsPage';
 import InventoryPage from './Pages/InventoryPage/InventoryPage';
-import InventoryListPage from './Pages/InventoryDetails/InventoryDetailsPage';
+import InventoryDetailsPage from './Pages/InventoryDetails/InventoryDetailsPage';
 import NotFound from './components/NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import AddWarehouse from './Pages/AddWarehouse/AddWarehouse';
 import EditWarehouse from './Pages/EditWarehouse/EditWarehouse';
-
 
 function App() {
 
@@ -25,14 +24,11 @@ function App() {
     })
   }, []);
 
- 
-
-    useEffect(() => {
-        axios.get(`http://localhost:5051/inventories`).then((response) => {
-            setInventoriesArray(response.data)
-        })
-    }, [warehousesArray]);
-
+  useEffect(() => {
+    axios.get(`http://localhost:5051/inventories`).then((response) => {
+      setInventoriesArray(response.data)
+    })
+  }, [warehousesArray]);
 
   return (
     <>
@@ -46,7 +42,7 @@ function App() {
             <Route path='/AddWarehouse' element={<AddWarehouse />}></Route>
             <Route path='/EditWarehouse/:WarehouseId' element={<EditWarehouse />}></Route>
             <Route path='/Inventories' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
-            <Route path='/InventoryDetails' element={<InventoryListPage />}></Route>
+            <Route path="/inventoryDetails/:inventoryId" element={<InventoryDetailsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

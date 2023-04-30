@@ -105,17 +105,6 @@ p {
         }
     }
 
-    // &--goto {
-    //     padding: 4px;
-    //     transition: ease-in-out 0.15s;
-
-    //     &:hover {
-    //         @include md {
-    //             transform: translateX(4px);
-    //         }
-    //     }
-    // }
-
     // Styling of All Button Text That Dissapears Leaving Only The Icon in Mobile
     &--text {
         @include font_Labels-Links-Buttons-Desktop;
