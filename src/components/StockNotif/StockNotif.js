@@ -1,13 +1,8 @@
 import React from 'react';
 import '../StockNotif/StockNotif.scss';
 
-function stockNotification() {
-
-    // STATUS TESTING DELETE ONCE DONE
-    let status = 'active';
-    status = 'inactive';
-    // STATUS TESTING DELETE ONCE DONE
-
+function StockNotification({ quantity }) {
+    const status = quantity > 0 ? 'active' : 'inactive';
     const statusClassName = `inventory-item__text status-${status}`;
 
     return (
@@ -17,4 +12,4 @@ function stockNotification() {
     );
 }
 
-export default stockNotification;
+export default StockNotification;
