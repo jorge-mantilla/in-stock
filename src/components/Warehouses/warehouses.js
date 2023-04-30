@@ -1,17 +1,19 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-
+import '../InventoryList/InventoryList.scss';
 import '../Warehouses/Warehouses.scss';
 
 import ArrowRightIcon from '../../assets/Icons/chevron_right-24px.svg';
 import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/Icons/edit-blue-24px.svg';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 
 
-function Warehouses() {
+
+function Warehouses(props) {
     const [warehousesArray, setWarehousesArray] = useState([])
+    const deleteHandler = props.deleteHandler
 
     useEffect(() => {
         axios.get(`http://localhost:5051/warehouses`).then((response) => {
@@ -53,9 +55,12 @@ function Warehouses() {
                                 </div>
                             </div>
                             <div className="warehouse-data__footer">
-                                <img src={DeleteIcon} alt="Delete Icon" />
-                                <Link className="warehouse-data__footer--icon" to={`/EditWarehouse/${warehouse.id}`}>
-                                    < img src={EditIcon} alt="Edit Icon" />
+                                <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteHandler(warehouse)}>
+                                    <img src={DeleteIcon} alt="Delete Icon" />
+                                </div>
+
+                                <Link id="footer--icon" className="warehouse-data__footer--icon" to={'/EDIT THIS SPECIFIC inventory'}>
+                                    <img src={EditIcon} alt="Edit Icon" />
                                 </Link>
                             </div>
                         </div>
