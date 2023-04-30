@@ -12,18 +12,16 @@ function WarehouseInventoryList(props) {
         return warehouseInventory.warehouse_name === specificWarehouse.warehouse_name
 })
 
-// console.log(specificWarehouseInventory[0]);
-
     return (
         <>
             {specificWarehouseInventory.map((inventory) => {
                 return (
-                    <article className="warehouse-data" >
+                    <article className="warehouse-data" key={inventory.id} >
                         <div className="warehouse-data__body">
                             <div className="warehouse-data__header">
                                 <div className="warehouse-data__opt">
                                     <div className="warehouse-data__sec">
-                                        <h4 className="warehouse-data__title">IVENTORY ITEM</h4>
+                                        <h4 className="warehouse-data__title">INVENTORY ITEM</h4>
                                         <p className="warehouse-data--text">{inventory.item_name}</p>
                                     </div>
                                 </div>
@@ -44,7 +42,7 @@ function WarehouseInventoryList(props) {
                             </div>
                             <div className="warehouse-data__footer">
                                 <img src={DeleteIcon} alt="Delete Icon" />
-                                <Link className="warehouse-data__footer--icon" to={'/EditWarehouse'}>
+                                <Link className="warehouse-data__footer--icon"  to={'/EditWarehouse'}>
                                     < img src={EditIcon} alt="Edit Icon" />
                                 </Link>
                             </div>
