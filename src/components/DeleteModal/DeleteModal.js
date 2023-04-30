@@ -20,16 +20,19 @@ function Delete({ deleteHandler, inventory, handleDelete, context }) {
     return (
         <div className='delete-container'>
             <div className='content'>
-                <div className='content__textbox'>
-                <img className= 'content_icon'src={IconClose}/>
-                    <h2>{deleteHeader}</h2>
-                    <p>{deleteBody}</p>
+                <div className='text'>
+                    <img className='text__icon' src={IconClose} />
+                    <div className='text__info'>
+                        <h2 className='text__title'>{deleteHeader}</h2>
+                        <p className='text__body'>{deleteBody}</p>
+                    </div>
                 </div>
-                <div className='content__btns'>
-                    <button onClick={deleteHandler} className='content__btns-cancel'>Cancel</button>
-                    <button onClick={() => handleDelete(inventory)} className='content__btns-delete'>Delete</button>
+                <div className='btns'>
+                    <button onClick={deleteHandler} className='btns__cancel'>Cancel</button>
+                    <button onClick={() => handleDelete(inventory)} className='btns__delete'>Delete</button>
                 </div>
             </div>
+
         </div>
     )
 }

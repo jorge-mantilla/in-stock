@@ -4,14 +4,14 @@
 @use '../../styles/partials/globals' as *;
 
 .delete-container {
-    background-color: rgb(19, 24, 44, 0.7);
-    position: fixed; // Change this from absolute to fixed
+    background-color: $primary-color--Instock_Black;
+    position: fixed;
     top: 0;
-    left: 0; // Add this to make sure it starts from the left edge of the page
+    left: 0;
     width: 100%;
     height: 100vh;
-    display: flex; // Add this to center the content div
-    justify-content: space-between; // Add this to center the content div horizontally
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -24,56 +24,76 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
 
-    &_icon {
-        display: flex;
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__icon {
+        cursor: pointer;
         align-self: flex-end;
-    }
-
-    &__textbox{
         padding-bottom: 16px;
+
     }
 
-    &__btns {
+    &__info {
+        // // display: flex;
+        // justify-content: space-between;
+        // align-items: flex-start;
+    }
+
+    &__title {
+        @include font_SubHeader-Mobile
+    }
+
+    &__body {
+        padding-top: 1rem;
+        @include font_Body-Medium-Mobile;
+    }
+
+} 
+  
+.btns {
         display: flex;
         align-items: center;
         width: 100%;
-        padding-bottom: 16px; // Add this to give some space at the bottom
         display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 16px;
-    }
-
-    &__btns-cancel{
-        background-color: $primary-color--Instock_White;
-        display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        width: 8.3rem;
-        border-radius: 20px;
-        border: 1px solid $secondary-color--Cloud;
-        padding-left: 16px;
-        padding-right: 16px;
-        transition: ease-in-out 0.06s;
-        height: 36px;
-        @include font_Labels-Links-Buttons-Mobile;
-    }
+        width: 100%;
+        padding-bottom: .625rem;
 
-    &__btns-delete{
-        background-color: $supporting-color--Red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 8.3rem;
-        border-radius: 20px;
-        border: 1px solid $supporting-color--Red;
-        padding-left: 16px;
-        padding-right: 16px;
-        transition: ease-in-out 0.06s;
-        height: 36px;
-        color: $primary-color--Instock_White;
-        @include font_Labels-Links-Buttons-Mobile;
-    }
+        &__cancel{
+            background-color: $primary-color--Instock_White;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 8.3rem;
+            border-radius: 20px;
+            border: 1px solid $secondary-color--Cloud;
+            padding-left: 16px;
+            padding-right: 16px;
+            transition: ease-in-out 0.06s;
+            height: 36px;
+            @include font_Labels-Links-Buttons-Mobile;
+        }
+    
+        &__delete{
+            background-color: $supporting-color--Red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 8.3rem;
+            border-radius: 20px;
+            border: 1px solid $supporting-color--Red;
+            padding-left: 16px;
+            padding-right: 16px;
+            transition: ease-in-out 0.06s;
+            height: 36px;
+            color: $primary-color--Instock_White;
+            @include font_Labels-Links-Buttons-Mobile;
+        }
 }
