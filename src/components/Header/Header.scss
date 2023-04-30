@@ -41,13 +41,13 @@
         width: 100%;
 
         &:last-of-type {
-            justify-content: end;
+            justify-content: flex-end;
         }
     }
 
     &__header {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
 
         @include md {
             width: 88%;

@@ -1,0 +1,161 @@
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/globals' as *;
+
+
+.inventory-item {
+
+    // REMOVE THIS IN COMPONENT
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 580px;
+    width: 100vw;
+
+    // REMOVE THIS IN COMPONENT
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-color--Instock_White;
+        border-radius: 4px;
+        padding: 16px 0px;
+        min-height: 365px;
+        min-width: 343px;
+        width: 88%;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+        @include md {
+            min-width: 704px;
+            min-height: 292px;
+            max-width: 80%;
+        }
+    }
+
+    &__sec {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 16px;
+        flex: 1;
+
+        &:first-of-type {
+            width: 90%;
+            margin-right: 32px;
+            padding: 16px 0px;
+
+            @include md {
+                width: 94%;
+            }
+        }
+
+        &:last-of-type {
+            border-top: 1px solid $secondary-color--Cloud;
+        }
+    }
+
+    &__header {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        @include font_Header-Mobile;
+        color: $primary-color--Instock_Black;
+    }
+
+    &__subtitle {
+        color: $secondary-color--Slate;
+        margin: 4px 0px;
+    }
+
+    &__text {
+        @include font_Body-Medium-Mobile;
+        color: $primary-color--Instock_Black;
+    }
+
+    &__info {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0px;
+
+        @include md {
+            flex-direction: row;
+            padding: 0px;
+            margin: 16px 0px;
+        }
+
+        &--data {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include md {
+                &:first-of-type {
+                    width: 90%;
+                    margin-right: 32px;
+                    padding: 16px 0px;
+                    border-right: 1px solid $secondary-color--Cloud;
+                }
+            }
+        }
+
+        &--sec {
+            width: 100%;
+            display: flex;
+            margin: 4px;
+        }
+
+        &--opt {
+            width: 96%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+
+    &__btn:hover img {
+        @include md {
+            animation: tilt-shaking .4s ease-out 0s 2 normal forwards;
+
+            @keyframes tilt-shaking {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                25% {
+                    transform: rotate(8deg);
+                }
+
+                50% {
+                    transform: rotate(0deg);
+                }
+
+                75% {
+                    transform: rotate(-8deg);
+                }
+
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+}
