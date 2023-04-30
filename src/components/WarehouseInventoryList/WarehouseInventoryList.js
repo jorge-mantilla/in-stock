@@ -22,7 +22,9 @@ function WarehouseInventoryList(props) {
                                 <div className="warehouse-data__opt">
                                     <div className="warehouse-data__sec">
                                         <h4 className="warehouse-data__title">INVENTORY ITEM</h4>
-                                        <p className="warehouse-data--text">{inventory.item_name}</p>
+                                        <Link to={`/inventoryDetails/${inventory.id}`}>
+                                            <p className="warehouse-data--text">{inventory.item_name}</p>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="warehouse-data__opt">
