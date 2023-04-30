@@ -17,13 +17,21 @@ import EditWarehouse from './Pages/EditWarehouse/EditWarehouse';
 function App() {
 
   const [warehousesArray, setWarehousesArray] = useState([])
+  const [inventoriesArray, setInventoriesArray] = useState([])
 
   useEffect(() => {
     axios.get(`http://localhost:5051/warehouses`).then((response) => {
-      console.log("APP JS", response.data);
       setWarehousesArray(response.data)
     })
   }, []);
+
+ 
+
+    useEffect(() => {
+        axios.get(`http://localhost:5051/inventories`).then((response) => {
+            setInventoriesArray(response.data)
+        })
+    }, [warehousesArray]);
 
 
   return (
@@ -34,7 +42,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Main />}></Route>
             <Route path='/Warehouses' element={<WarehousePage warehousesArray={warehousesArray} />}></Route>
-            <Route path='/WarehouseDetails/:WarehouseId' element={<WarehouseDetailsPage warehousesArray={warehousesArray} />}></Route>
+            <Route path='/WarehouseDetails/:WarehouseId' element={<WarehouseDetailsPage inventoriesArray={inventoriesArray} warehousesArray={warehousesArray} />}></Route>
             <Route path='/AddWarehouse' element={<AddWarehouse />}></Route>
             <Route path='/EditWarehouse/:WarehouseId' element={<EditWarehouse />}></Route>
             <Route path='/Inventories' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
