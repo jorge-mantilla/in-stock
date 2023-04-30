@@ -10,7 +10,7 @@ import './InventoryDetailsPage.scss';
 import BackIcon from '../../assets/Icons/arrow_back-24px.svg';
 import EditIcon from '../../assets/Icons/edit-white-24px.svg';
 
-function InventoryDetailsPage() {
+function InventoryDetailsPage({ warehousesArray }) {
 
     const { inventoryId } = useParams();
     const [inventoryItem, setInventoryItem] = useState(null);
@@ -22,6 +22,14 @@ function InventoryDetailsPage() {
     }, [inventoryId]);
 
     console.log("inventoryItem state:", inventoryItem);
+
+    const warehouse = inventoryItem && warehousesArray.find(
+        (warehouse) => warehouse.id === inventoryItem.warehouse_id
+    );
+
+    console.log("warehousesArray prop:", warehousesArray);
+    console.log("Found warehouse:", warehouse);
+
 
     return (
         inventoryItem && (
@@ -62,7 +70,7 @@ function InventoryDetailsPage() {
                                     <div className="inventory-item__info--sec">
                                         <div className="inventory-item__info--opt">
                                             <h4 className="inventory-item__subtitle">STATUS:</h4>
-                                            <StockNotif />
+                                            <StockNotif quantity={inventoryItem.quantity} />
                                         </div>
                                         <div className="inventory-item__info--opt">
                                             <h4 className="inventory-item__subtitle">QUANTITY:</h4>
@@ -72,7 +80,7 @@ function InventoryDetailsPage() {
                                     <div className="inventory-item__info--sec">
                                         <div className="inventory-item__info--opt">
                                             <h4 className="inventory-item__subtitle">WAREHOUSE:</h4>
-                                            <p className="inventory-item__text">{inventoryItem.warehouse_name}</p>
+                                            <p className="inventory-item__text">{warehouse && warehouse.warehouse_name}</p>
                                         </div>
                                     </div>
                                 </div>
