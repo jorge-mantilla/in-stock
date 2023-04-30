@@ -16,7 +16,7 @@ function WarehouseDetailsPage(props) {
             <img alt="back arrow" />
         </Link>
         {warehousesArray.length > 0 &&
-            <WarehouseDetails specificWarehouse={specificWarehouse[0]} />
+            <WarehouseDetails specificWarehouse={specificWarehouse[0]}/>
         }
         <WarehouseInventoryList inventoriesArray={inventoriesArray} specificWarehouse={specificWarehouse[0]} />
     </>
