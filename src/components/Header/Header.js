@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/Logo/InStock-Logo.svg';
 import '../Header/Header.scss';
 
-//installed axios
-// npm i axios dotenv react-com react-router-dom scss
-//git repo check
-
 function Header() {
+    const location = useLocation();
+
     return (
         <>
             <header className='navbar'>
@@ -19,15 +17,15 @@ function Header() {
                         </div>
                     </div>
                     <div className='navbar__sec'>
-                        <Link to={'/warehouses'} id='navbar--link' className='navbar__links'>
-                            < button className='navbar__btn current-page--active' type='submit'>Warehouses</button>
+                        <Link to={'/warehouses'} id='navbar--link' className={`navbar__links ${location.pathname === '/warehouses' ? 'current-page--active' : 'current-page--inactive'}`}>
+                            <button className='navbar__btn' type='submit'>Warehouses</button>
                         </Link>
-                        <Link to={'/inventories'} id='navbar--link' className='navbar__links'>
-                            <button className='navbar__btn  current-page--inactive' type='submit'>Inventory</button>
+                        <Link to={'/inventories'} id='navbar--link' className={`navbar__links ${location.pathname === '/inventories' ? 'current-page--active' : 'current-page--inactive'}`}>
+                            <button className='navbar__btn' type='submit'>Inventory</button>
                         </Link>
                     </div>
                 </div>
-            </header >
+            </header>
         </>
     );
 }
