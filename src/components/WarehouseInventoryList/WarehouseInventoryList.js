@@ -3,6 +3,8 @@ import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/Icons/edit-blue-24px.svg';
 import { Link } from 'react-router-dom';
 
+import '../WarehouseInventoryList/WarehouseInventoryList.scss';
+
 function WarehouseInventoryList(props) {
 
     const inventoriesArray = props.inventoriesArray
@@ -10,7 +12,7 @@ function WarehouseInventoryList(props) {
 
     const specificWarehouseInventory = inventoriesArray.filter((warehouseInventory) => {
         return warehouseInventory.warehouse_name === specificWarehouse.warehouse_name
-})
+    })
 
     return (
         <>
@@ -44,23 +46,16 @@ function WarehouseInventoryList(props) {
                             </div>
                             <div className="warehouse-data__footer">
                                 <img src={DeleteIcon} alt="Delete Icon" />
-                                <Link className="warehouse-data__footer--icon"  to={'/EditWarehouse'}>
+                                <Link className="warehouse-data__footer--icon" to={'/EditWarehouse'}>
                                     < img src={EditIcon} alt="Edit Icon" />
                                 </Link>
                             </div>
                         </div>
                     </article>
-            )}
+                )
+            }
             )}
         </>
     );
 }
 export default WarehouseInventoryList;
-
-{/* //                  <div>
-                //         <div>{inventory.item_name}</div>
-                //         <div>{inventory.category}</div>
-                //         <div>{inventory.status}</div>
-                //         <div>{inventory.quantity}</div>
-                //     </div>
-                //  */}

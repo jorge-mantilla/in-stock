@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 580px;
+    height: 36.25rem;
     width: 80vw;
 
     &__body {
@@ -18,16 +18,16 @@
         align-items: center;
         justify-content: center;
         background-color: $primary-color--Instock_White;
-        border-radius: 4px;
-        padding: 16px 0px;
-        min-height: 365px;
-        min-width: 343px;
+        border-radius: .25rem;
+        padding: 1rem 0rem;
+        min-height: 22.8125rem;
+        min-width: 21.4375rem;
         width: 88%;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        box-shadow: 0rem .125rem .3125rem rgba(19, 24, 44, 0.1);
 
         @include md {
-            min-width: 704px;
-            min-height: 292px;
+            min-width: 44rem;
+            min-height: 18.25rem;
             max-width: 80%;
         }
     }
@@ -37,13 +37,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0px 16px;
+        margin: 0rem 1rem;
         flex: 1;
 
         &:first-of-type {
             width: 90%;
-            margin-right: 32px;
-            padding: 16px 0px;
+            margin-right: 2rem;
+            padding: 1rem 0rem;
 
             @include md {
                 width: 94%;
@@ -51,7 +51,7 @@
         }
 
         &:last-of-type {
-            border-top: 1px solid $secondary-color--Cloud;
+            border-top: .0625rem solid $secondary-color--Cloud;
         }
     }
 
@@ -75,7 +75,7 @@
 
     &__subtitle {
         color: $secondary-color--Slate;
-        margin: 4px 0px;
+        margin: .25rem 0rem;
     }
 
     &__text {
@@ -87,12 +87,12 @@
         width: 90%;
         display: flex;
         flex-direction: column;
-        padding: 8px 0px;
+        padding: .5rem 0rem;
 
         @include md {
             flex-direction: row;
-            padding: 0px;
-            margin: 16px 0px;
+            padding: 0rem;
+            margin: 1rem 0rem;
         }
 
         &--data {
@@ -105,9 +105,9 @@
             @include md {
                 &:first-of-type {
                     width: 90%;
-                    margin-right: 32px;
-                    padding: 16px 0px;
-                    border-right: 1px solid $secondary-color--Cloud;
+                    margin-right: 2rem;
+                    padding: 1rem 0rem;
+                    border-right: .0625rem solid $secondary-color--Cloud;
                 }
             }
         }
@@ -115,7 +115,7 @@
         &--sec {
             width: 100%;
             display: flex;
-            margin: 4px;
+            margin: .25rem;
         }
 
         &--opt {
@@ -159,34 +159,34 @@
     all: unset;
 
     &--return {
-        padding: 8px;
+        padding: .5rem;
         transition: ease-in-out .15s;
 
         @include md {
             &:hover {
-                transform: translateX(-4px);
+                transform: translateX(-0.25rem);
             }
         }
     }
 
     &--edit {
         display: flex;
-        border-radius: 30px;
-        padding: 10px;
-        margin: 8px;
+        border-radius: 1.875rem;
+        padding: .625rem;
+        margin: .5rem;
         background-color: $primary-color--Instock_Indigo;
         transition: ease-in-out .06s;
 
         @include md {
-            border-radius: 20px;
-            width: 81px;
-            height: 38px;
+            border-radius: 1.25rem;
+            width: 5.0625rem;
+            height: 2.375rem;
             justify-content: space-evenly;
             align-items: center;
         }
 
         & img {
-            width: 20px;
+            width: 1.25rem;
         }
 
         &:hover {
@@ -199,7 +199,7 @@
     }
 
     &--icon {
-        width: 15px;
+        width: .9375rem;
     }
 
     &--text {
