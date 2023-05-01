@@ -62,7 +62,13 @@
 
         @include md {
         align-self: flex-start;
+        padding-bottom: 78px;
         }
+
+        @include lg {
+            align-self: flex-start;
+            padding-bottom: 114px;
+            }
 
     }
 
