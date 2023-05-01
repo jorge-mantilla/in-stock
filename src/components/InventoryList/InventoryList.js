@@ -55,7 +55,7 @@ function InventoryList(props) {
                             <img src={DeleteIcon} alt="Delete Icon" />
                         </div>
 
-                        <Link id="footer--icon" className="inventory-data__footer--icon" to={'/EDIT THIS SPECIFIC inventory'}>
+                        <Link id="footer--icon" className="inventory-data__footer--icon" to={'/EditInventoryForm'}>
                             <img src={EditIcon} alt="Edit Icon" />
                         </Link>
                     </div>

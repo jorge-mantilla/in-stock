@@ -51,7 +51,7 @@ function InventoryPage(props) {
                                 </div>
                             </div>
                             <div className="inventory__sec">
-                                <Link className="inventory__upload-link" to={'/inventory-add'}>
+                                <Link className="inventory__upload-link" to={'/AddInventoryForm'}>
                                     <button id='warehouse__btn' className="btn" type="submit">
                                         <img id='warehouse__btn--icon' className="btn--icon" src={AddIcon} alt="Add Icon" />
                                         <p className="btn--text">Add New Item</p>

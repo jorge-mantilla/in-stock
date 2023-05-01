@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import AddWarehouse from './Pages/AddWarehouse/AddWarehouse';
 import EditWarehouse from './Pages/EditWarehouse/EditWarehouse';
+import AddInventoryForm from './components/AddInventoryForm/AddInventoryForm';
+import EditInventoryForm from './components/EditInventoryForm/EditInventoryForm';
 
 function App() {
 
@@ -43,6 +45,8 @@ function App() {
             <Route path='/EditWarehouse/:WarehouseId' element={<EditWarehouse />}></Route>
             <Route path='/Inventories' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
             <Route path="/inventoryDetails/:inventoryId" element={<InventoryDetailsPage warehousesArray={warehousesArray} />} />
+            <Route path='/EditInventoryForm' element={<EditInventoryForm />}></Route>
+            <Route path='/AddInventoryForm' element={<AddInventoryForm />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

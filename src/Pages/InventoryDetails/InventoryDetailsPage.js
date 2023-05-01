@@ -44,7 +44,7 @@ function InventoryDetailsPage({ warehousesArray }) {
                                 <h1 className="inventory-item__title">{inventoryItem.item_name}</h1>
                             </div>
 
-                            <Link to={'/editInventory'} id="btn--edit" className="inventory-item__btn " type="submit">
+                            <Link to={'/EditInventoryForm'} id="btn--edit" className="inventory-item__btn " type="submit">
                                 <img id="btn--icon" src={EditIcon} alt="Edit Icon" />
                                 <p id="btn--text">Edit</p>
                             </Link>
