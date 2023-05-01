@@ -1,0 +1,17 @@
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/globals' as *;
+
+
+.warehouse-inventory {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color--Instock_White;
+    border-top: .0625rem solid $secondary-color--Cloud;
+    border-radius: .25rem;
+    box-shadow: 0rem .125rem .3125rem rgba(19, 24, 44, 0.05);
+}

@@ -12,19 +12,19 @@
         font-weight: 600;
         display: flex;
         justify-content: center;
-        border-radius: 20px;
-        padding: 4px 8px;
+        border-radius: 1.25rem;
+        padding: .25rem .5rem;
     }
 
     &-active {
         color: $supporting-color--Green;
         background-color: rgba(21, 132, 99, 0.07);
-        width: 70px;
+        width: 4.375rem;
     }
 
     &-inactive {
         color: $supporting-color--Red;
         background-color: rgba(201, 69, 21, 0.07);
-        width: 100px;
+        width: 6.25rem;
     }
 }
