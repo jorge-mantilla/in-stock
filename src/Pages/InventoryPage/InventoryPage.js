@@ -54,7 +54,7 @@ function InventoryPage(props) {
                                 </div>
                             </div>
                             <div className="inventory__sec">
-                                <Link className="inventory__upload-link" to={'/AddInventoryForm'}>
+                                <Link className="inventory__upload-link" to={'/inventory-add'}>
                                     <button id='warehouse__btn' className="btn" type="submit">
                                         <img id='warehouse__btn--icon' className="btn--icon" src={AddIcon} alt="Add Icon" />
                                         <p className="btn--text">Add New Item</p>
@@ -91,10 +91,7 @@ function InventoryPage(props) {
                             </li>
                         </ul>
                     </section>
-                    <InventoryList deleteHandler={deleteHandler} warehousesArray={props.warehousesArray} />
-                    {showDelete && <DeleteModal deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} context="inventory" />}
                 </div >
-<<<<<<< HEAD
 
                 <InventoryList deleteClickHandler={deleteClickHandler} />
 
@@ -105,8 +102,6 @@ function InventoryPage(props) {
                     context="inventory"
                 />}
 
-=======
->>>>>>> develop
             </section >
         </>
     );

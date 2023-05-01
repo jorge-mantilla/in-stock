@@ -21,7 +21,7 @@ function Delete({ deleteClickHandler, inventory, handleDelete, context }) {
         <div className='delete-container'>
             <div className='content'>
                 <div className='text'>
-                    <button onClick={deleteClickHandler}>
+                    <button className= 'text__btn' onClick={deleteClickHandler}>
                         <img className='text__icon' src={IconClose} alt="x icon to close window" />
                     </button>
                     <div className='text__info'>

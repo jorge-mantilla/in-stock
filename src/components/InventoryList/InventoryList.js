@@ -51,7 +51,7 @@ function InventoryList(props) {
                         </div>
                     </div>
                     <div className="inventory-data__footer">
-                        <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteHandler(inventory)}>
+                        <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteClickHandler(inventory)}>
                             <img src={DeleteIcon} alt="Delete Icon" />
                         </div>
 
