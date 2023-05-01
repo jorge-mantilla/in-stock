@@ -16,56 +16,59 @@ function InventoryList(props) {
         })
     }, []);
 
-    return (
-        <>
-            {InventoryArray.map((inventory) => {
-                return (
-                    <article className="inventory-data">
-                        <div className="inventory-data__body">
-                            <div className="inventory-data__header">
-                                <div className="inventory-data__opt">
-                                    <div className="inventory-data__sec">
-                                        <h4 className="inventory-data__title">inventory</h4>
-                                        <Link className="inventory-data__link" to='/inventoryDetails'>
-                                            <p className="inventory-data__link--text">{inventory.item_name}</p>
-                                            <img className="warehouse-data__link--arrow-icon btn--goto" src={ArrowRightIcon} alt="More Details Arrow Icon" />
-                                        </Link>
-                                    </div>
-                                    <div className="inventory-data__sec">
-                                        <h4 className="inventory-data__title">CATEGORY</h4>
-                                        <p className="inventory-data--text">{inventory.category}</p>
-                                    </div>
-                                </div>
-                                <div className="inventory-data__opt">
-                                    <div className="inventory-data__sec">
-                                        <h4 className="inventory-data__title">STATUS</h4>
-                                        <p className="inventory-data--text">{inventory.status}</p>
-                                    </div>
-                                    <div className="inventory-data__sec">
-                                        <h4 className="inventory-data__title">QUANTITY</h4>
-                                        <p className="inventory-data--text">{inventory.quantity}</p>
-                                    </div>
-                                    <div className="inventory-data__sec">
-                                        <h4 className="inventory-data__title">WAREHOUSE</h4>
-                                        <p className="inventory-data--text">{inventory.warehouse_name}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="inventory-data__footer">
-                                <button onClick={()=>deleteClickHandler(inventory)}>
-                                    <img src={DeleteIcon} alt="Delete Icon" />
-                                </button>
-
-                                <Link className="inventory-data__footer--icon" to={'/EDIT THIS SPECIFIC inventory'}>
-                                    < img src={EditIcon} alt="Edit Icon" />
+    function renderInventoryItem(inventory) {
+        console.log("Inventory item:", inventory, "ID:", inventory.id);
+        return (
+            <article className="inventory-data">
+                <div className="inventory-data__body">
+                    <div className="inventory-data__header">
+                        <div className="inventory-data__opt">
+                            <div className="inventory-data__sec">
+                                <h4 className="inventory-data__title">INVENTORY</h4>
+                                <Link className="inventory-data__link" to={`/inventoryDetails/${inventory.id}`}>
+                                    <p className="inventory-data__link--text">{inventory.item_name}</p>
+                                    <img className="warehouse-data__link--arrow-icon btn--goto" src={ArrowRightIcon} alt="More Details Arrow Icon" />
                                 </Link>
                             </div>
+                            <div className="inventory-data__sec">
+                                <h4 className="inventory-data__title">CATEGORY</h4>
+                                <p className="inventory-data--text">{inventory.category}</p>
+                            </div>
                         </div>
-                    </article>
-                )
-            })
-            }
+                        <div className="inventory-data__opt">
+                            <div className="inventory-data__sec">
+                                <h4 className="inventory-data__title">STATUS</h4>
+                                <p className="inventory-data--text">{inventory.status}</p>
+                            </div>
+                            <div className="inventory-data__sec">
+                                <h4 className="inventory-data__title">QUANTITY</h4>
+                                <p className="inventory-data--text">{inventory.quantity}</p>
+                            </div>
+                            <div className="inventory-data__sec">
+                                <h4 className="inventory-data__title">WAREHOUSE</h4>
+                                <p className="inventory-data--text">{inventory.warehouse_name}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="inventory-data__footer">
+                        <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteHandler(inventory)}>
+                            <img src={DeleteIcon} alt="Delete Icon" />
+                        </div>
+
+                        <Link id="footer--icon" className="inventory-data__footer--icon" to={'/EditInventoryForm'}>
+                            <img src={EditIcon} alt="Edit Icon" />
+                        </Link>
+                    </div>
+                </div>
+            </article>
+        );
+    }
+
+    return (
+        <>
+            {InventoryArray.map(renderInventoryItem)}
         </>
     );
 }
+
 export default InventoryList;

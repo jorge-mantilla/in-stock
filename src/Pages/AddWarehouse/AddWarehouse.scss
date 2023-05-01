@@ -5,113 +5,140 @@
 .addForm {
   display: block;
   background-color: $primary-color--Instock_White;
-  border-radius: 4px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2),
-    0px 4px 2px 2px rgba(0, 0, 0, 0.2);
-border-bottom: 1px solid $background-color--Light-Gray;
+  border-radius: .25rem;
+  box-shadow: .125rem .125rem .125rem .125rem rgba(0, 0, 0, 0.2),
+    0rem .25rem .125rem .125rem rgba(0, 0, 0, 0.2);
+  border-bottom: .0625rem solid $background-color--Light-Gray;
   width: 95vw;
+
   @include md {
     width: 88vw;
   }
+
   @include lg {
     width: 78vw;
   }
 
   &__header {
-    font-size: 1.4rem;
-    line-height: 1.375rem;
-    padding: 1.5rem 3rem;
+    font-size: 22.4px;
+    line-height: 22px;
+    padding: 24px 48px;
     width: 95vw;
+
     @include md {
       width: 88vw;
     }
+
     @include lg {
       width: 78vw;
     }
   }
+
   &__tablet-header-box {
     @include md {
       display: inline-flex;
-      border-bottom: 1px solid $secondary-color--Cloud;
+      border-bottom: .0625rem solid $secondary-color--Cloud;
     }
   }
+
   &__tablet-form-box {
     @include md {
       display: inline-flex;
-      border-right: 1px solid $secondary-color--Cloud;
-      padding-right: 5%;
     }
   }
-  &__tablet-form-contact-box {
-    @include md {
-      display: inline-flex;
-    }
-  }
+
   &__tablet-wrapper {
+    display: block;
+
     @include md {
       display: inline-flex;
-      width: 90vw;
+      width: 88vw;
       justify-content: space-evenly;
     }
   }
+
   &__subheader {
     @include font_SubHeader-Mobile;
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     text-align: left;
+
     @include md {
       display: flex;
     }
   }
-  &__container {
-    display: block;
-    @include md {
-      display: flex;
-    }
-  }
+
   &__whd-container {
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+
+    @include md {
+      border-right: .0625rem solid $secondary-color--Cloud;
+      display: flex;
+    }
   }
+
+  &__whc-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+
+    @include md {
+      display: flex;
+      padding-left: 10%;
+    }
+  }
+
   &__whd-border {
-    border: 1px solid $secondary-color--Cloud;
+    border: .0625rem solid $secondary-color--Cloud;
     width: 95vw;
-    margin-top: 0.5rem;
+    margin-top: 8px;
+
     @include md {
       display: none;
       width: 88vw;
     }
+
     @include lg {
       width: 78vw;
     }
   }
+
   &__wh-form {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
+    @include md {
+      display: flex;
+      padding: 0 16px;
+    }
   }
+
   &__contact-form {
     display: flex;
     flex-direction: column;
-    padding: 0 1rem;
+    padding: 0 16px;
   }
+
   &__input {
-    border-radius: 20px;
-    border: 1px solid $secondary-color--Cloud;
-    width: 17.5rem;
-    height: 1.5625rem;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    border-radius: 1.25rem;
+    border: .0625rem solid $secondary-color--Cloud;
+    width: 280px;
+    height: 25px;
+    padding: 8px;
+    margin-bottom: 8px;
   }
+
   &__label {
-    padding: 0.1rem 0;
+    padding: 1.6px 0;
     @include font_Body-Medium-Mobile;
     text-align: left;
   }
+
   &__button-box {
     display: flex;
     background-color: $background-color--Light-Gray;
     justify-content: space-evenly;
-    padding: 1rem;
+    padding: 16px;
     position: relative;
+
     @include md {
       justify-content: end;
     }
@@ -120,44 +147,47 @@ border-bottom: 1px solid $background-color--Light-Gray;
 
 .btn--icon {
   position: absolute;
-  top: 9.8125rem;
-  left: 1.875rem;
+  top: 157px;
+  left: 30px;
+
   @include md {
-    top: 6.6125rem;
-    left: 4.675rem;
+    top: 105.8px;
+    left: 74.8px;
   }
+
   @include lg {
-    top: 6.6125rem;
-    left: 9.675rem;
+    top: 105.8px;
+    left: 154.8px;
   }
 }
 
 .btn--plus {
   position: absolute;
-  top: 2.3125rem;
-  left: 10.425rem;
-  height: 1rem;
+  top: 37px;
+  left: 166.8px;
+  height: 16px;
 }
 
 .btn__cancel {
   background-color: $primary-color--Instock_White;
   display: flex;
   justify-content: center;
-  width: 6.875rem;
-  border-radius: 1.875rem;
-  border: 1px solid $secondary-color--Cloud;
-  padding: 0.625rem;
-  margin: 0.5rem;
+  width: 110px;
+  border-radius: 30px;
+  border: .0625rem solid $secondary-color--Cloud;
+  padding: 10px;
+  margin: 8px;
   transition: ease-in-out 0.06s;
-  height: 2.5rem;
+  height: 40px;
   @include font_Labels-Links-Buttons-Mobile;
 }
+
 .btn__submit {
-  width: 7.8125rem;
+  width: 125px;
   display: flex;
   justify-content: center;
-  border: 1px solid $secondary-color--Cloud;
-  height: 2.5rem;
+  border: .0625rem solid $secondary-color--Cloud;
+  height: 40px;
   position: relative;
   @include font_Labels-Links-Buttons-Mobile;
 }
