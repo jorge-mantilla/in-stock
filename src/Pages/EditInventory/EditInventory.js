@@ -5,6 +5,8 @@ import AddIcon from "../../assets/Icons/arrow_back-24px.svg";
 import { Link, Navigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import BackIcon from '../../assets/Icons/arrow_back-24px.svg';
+
 
 function EditInventory() {
     const [inventoryData, setInventoryData] = useState({});
