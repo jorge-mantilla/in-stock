@@ -13,15 +13,18 @@ function InventoryPage(props) {
 
     const inventoryArray = props.inventoryArray
 
+    //state variables for delete modal
     const [showDelete, setShowDelete] = useState(false);
     const [selectedInventory, setSelectedInventory] = useState(null);
 
-    function deleteHandler(item) {
+    //click handler for show/hide delete modal AND to grab inventory item
+    function deleteClickHandler(item) {
         console.log("clicked:", item);
         setSelectedInventory(item);
         setShowDelete(!showDelete);
     }
 
+    //used in delete modal component to actually delete inventory item AND then hide delete modal
     function handleDelete(inventory) {
         axios.delete(`http://localhost:5051/inventories/${inventory.id}`)
             .then(() => {
@@ -89,8 +92,16 @@ function InventoryPage(props) {
                         </ul>
                     </section>
                 </div >
-                <InventoryList deleteHandler={deleteHandler} />
-                {showDelete && <DeleteModal deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} context="inventory"/>}
+
+                <InventoryList deleteClickHandler={deleteClickHandler} />
+
+                {showDelete && <DeleteModal 
+                    deleteClickHandler={deleteClickHandler} 
+                    handleDelete={handleDelete} 
+                    inventory={selectedInventory} 
+                    context="inventory"
+                />}
+
             </section >
         </>
     );
