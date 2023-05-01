@@ -13,15 +13,18 @@ function InventoryPage(props) {
 
     const inventoryArray = props.inventoryArray
 
+    //state variables for delete modal
     const [showDelete, setShowDelete] = useState(false);
     const [selectedInventory, setSelectedInventory] = useState(null);
 
-    function deleteHandler(item) {
+    //click handler for show/hide delete modal AND to grab inventory item
+    function deleteClickHandler(item) {
         console.log("clicked:", item);
         setSelectedInventory(item);
         setShowDelete(!showDelete);
     }
 
+    //used in delete modal component to actually delete inventory item AND then hide delete modal
     function handleDelete(inventory) {
         axios.delete(`http://localhost:5051/inventories/${inventory.id}`)
             .then(() => {
@@ -51,7 +54,7 @@ function InventoryPage(props) {
                                 </div>
                             </div>
                             <div className="inventory__sec">
-                                <Link className="inventory__upload-link" to={'/AddInventoryForm'}>
+                                <Link className="inventory__upload-link" to={'/inventory-add'}>
                                     <button id='warehouse__btn' className="btn" type="submit">
                                         <img id='warehouse__btn--icon' className="btn--icon" src={AddIcon} alt="Add Icon" />
                                         <p className="btn--text">Add New Item</p>
@@ -88,9 +91,17 @@ function InventoryPage(props) {
                             </li>
                         </ul>
                     </section>
-                    <InventoryList deleteHandler={deleteHandler} warehousesArray={props.warehousesArray} />
-                    {showDelete && <DeleteModal deleteHandler={deleteHandler} inventory={selectedInventory} handleDelete={handleDelete} context="inventory" />}
                 </div >
+
+                <InventoryList deleteClickHandler={deleteClickHandler} />
+
+                {showDelete && <DeleteModal 
+                    deleteClickHandler={deleteClickHandler} 
+                    handleDelete={handleDelete} 
+                    inventory={selectedInventory} 
+                    context="inventory"
+                />}
+
             </section >
         </>
     );

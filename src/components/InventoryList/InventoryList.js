@@ -8,7 +8,7 @@ import EditIcon from '../../assets/Icons/edit-blue-24px.svg';
 
 function InventoryList(props) {
     const [InventoryArray, setInventoryArray] = useState([])
-    const deleteHandler = props.deleteHandler
+    const deleteClickHandler = props.deleteClickHandler
 
     useEffect(() => {
         axios.get(`http://localhost:5051/inventories`).then((response) => {
@@ -51,7 +51,7 @@ function InventoryList(props) {
                         </div>
                     </div>
                     <div className="inventory-data__footer">
-                        <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteHandler(inventory)}>
+                        <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteClickHandler(inventory)}>
                             <img src={DeleteIcon} alt="Delete Icon" />
                         </div>
 
