@@ -2,9 +2,8 @@ import "./EditWarehouse.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AddIcon from "../../assets/Icons/arrow_back-24px.svg";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 function EditWarehouse() {
   const [warehouseData, setWarehouseData] = useState({});
@@ -31,8 +30,10 @@ function EditWarehouse() {
     const updateFix = "2023-04-26 13:45:04";
 
     const newWarehouseData = {
-      ...warehouseData, updated_at: updateFix, created_at: updateFix
-    }
+      ...warehouseData,
+      updated_at: updateFix,
+      created_at: updateFix,
+    };
 
     try {
       const response = await axios.put(
@@ -43,7 +44,7 @@ function EditWarehouse() {
             "Content-Type": "application/json",
           },
         }
-      )
+      );
 
       // Check for successful response
       if (response.status !== 200) {
@@ -51,6 +52,7 @@ function EditWarehouse() {
       }
 
       console.log("Warehouse edited successfully!");
+      navigate("/warehouses");
     } catch (error) {
       console.error("Error editing warehouse:", error);
       console.log("Response data:", error.response.data);
@@ -58,9 +60,9 @@ function EditWarehouse() {
   };
 
   return (
-    <article className="addForm">
-      <div className="addForm__tablet-header-box">
-        <h1 className="addForm__header">Edit Warehouse</h1>
+    <article className="editForm">
+      <div className="editForm__tablet-header-box">
+        <h1 className="editForm__header">Edit Warehouse</h1>
         <Link to="../warehouses">
           <img
             id="warehouse__btn--icon"
@@ -70,100 +72,105 @@ function EditWarehouse() {
           />
         </Link>
       </div>
-      <div className="addForm__tablet-wrapper">
-        <div className="addForm__tablet-form-box">
-          <div className="addForm__whd-border"></div>
-          <div className="addForm__whd-container">
-            <h2 className="addForm__subheader">Warehouse Details</h2>
-            <form
-              className="addForm__wh-form"
-              onSubmit={handleSubmit}
-              // noValidate
-            >
-              <label className="addForm__label">Warehouse Name</label>
-              <input
-                type="text"
-                name="warehouse_name"
-                placeholder="Warehouse Name"
-                value={warehouseData.warehouse_name}
-                onChange={handleInputChange}
-                className="addForm__input"
-              />
-              <label className="addForm__label">Street Address</label>
-              <input
-                type="text"
-                name="address"
-                placeholder="Street Address"
-                value={warehouseData.address}
-                onChange={handleInputChange}
-                className="addForm__input"
-              />
-              <label className="addForm__label">City</label>
-              <input
-                type="text"
-                name="city"
-                placeholder="City"
-                value={warehouseData.city}
-                onChange={handleInputChange}
-                className="addForm__input"
-              />
-              <label className="addForm__label">Country</label>
-              <input
-                type="text"
-                name="country"
-                placeholder="Country"
-                value={warehouseData.country}
-                onChange={handleInputChange}
-                className="addForm__input"
-              />
-              <label className="addForm__label">Contact Name</label>
-              <input
-                type="text"
-                name="contact_name"
-                placeholder="Contact Name"
-                value={warehouseData.contact_name}
-                onChange={handleInputChange}
-                className="addForm__input"
-              />
-              <label className="addForm__label">Position</label>
-              <input
-                type="text"
-                name="contact_position"
-                placeholder="Position"
-                value={warehouseData.contact_position}
-                onChange={handleInputChange}
-                className="addForm__input"
-              />
-              <label className="addForm__label">Phone Number</label>
-              <input
-                type="text"
-                name="contact_phone"
-                placeholder="Phone Number"
-                value={warehouseData.contact_phone}
-                onChange={handleInputChange}
-                className="addForm__input"
-              />
-              <label className="addForm__label">Email</label>
-              <input
-                type="text"
-                name="contact_email"
-                placeholder="Email"
-                value={warehouseData.contact_email}
-                onChange={handleInputChange}
-                className="addForm__input"
-              />
-              <button className="btn btn__submit" type="submit">
-                Save
-              </button>
-              <button type="click" className="btn__cancel">
-                Cancel
-              </button>
-              {/* <img className="btn--plus" src={PlusIcon} alt="Add Icon" /> */}
-            </form>
+      <div className="editForm__whd-border"></div>
+      <div className="editForm__tablet-wrapper">
+        <form
+          className="editForm__wh-form"
+          onSubmit={handleSubmit}
+          // noValidate
+        >
+          <div className="editForm__whd-container">
+            <h2 className="editForm__subheader">Warehouse Details</h2>
+            <label className="editForm__label">Warehouse Name</label>
+            <input
+              type="text"
+              name="warehouse_name"
+              placeholder="Warehouse Name"
+              value={warehouseData.warehouse_name}
+              onChange={handleInputChange}
+              className="editForm__input"
+            />
+            <label className="editForm__label">Street Address</label>
+            <input
+              type="text"
+              name="address"
+              placeholder="Street Address"
+              value={warehouseData.address}
+              onChange={handleInputChange}
+              className="editForm__input"
+            />
+            <label className="editForm__label">City</label>
+            <input
+              type="text"
+              name="city"
+              placeholder="City"
+              value={warehouseData.city}
+              onChange={handleInputChange}
+              className="editForm__input"
+            />
+            <label className="editForm__label">Country</label>
+            <input
+              type="text"
+              name="country"
+              placeholder="Country"
+              value={warehouseData.country}
+              onChange={handleInputChange}
+              className="editForm__input"
+            />
           </div>
-        </div>
+          <div className="editForm__whd-border"></div>
+
+          <div className="editForm__whc-container">
+            <h2 className="editForm__subheader">Contact Details</h2>
+
+            <label className="editForm__label">Contact Name</label>
+            <input
+              type="text"
+              name="contact_name"
+              placeholder="Contact Name"
+              value={warehouseData.contact_name}
+              onChange={handleInputChange}
+              className="editForm__input"
+            />
+            <label className="editForm__label">Position</label>
+            <input
+              type="text"
+              name="contact_position"
+              placeholder="Position"
+              value={warehouseData.contact_position}
+              onChange={handleInputChange}
+              className="editForm__input"
+            />
+            <label className="editForm__label">Phone Number</label>
+            <input
+              type="text"
+              name="contact_phone"
+              placeholder="Phone Number"
+              value={warehouseData.contact_phone}
+              onChange={handleInputChange}
+              className="editForm__input"
+            />
+            <label className="editForm__label">Email</label>
+            <input
+              type="text"
+              name="contact_email"
+              placeholder="Email"
+              value={warehouseData.contact_email}
+              onChange={handleInputChange}
+              className="editForm__input"
+            />
+            <button className="btn btn__submit" type="submit">
+              Save
+            </button>
+            <button type="click" className="btn__cancel">
+              Cancel
+            </button>
+            {/* <img className="btn--plus" src={PlusIcon} alt="Add Icon" /> */}
+          </div>
+        </form>
       </div>
-      {/* <div className="addForm__button-box">
+
+      {/* <div className="editForm__button-box">
             </div> */}
     </article>
   );

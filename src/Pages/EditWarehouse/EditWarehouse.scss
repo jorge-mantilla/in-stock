@@ -50,7 +50,7 @@
   &__tablet-wrapper {
     @include md {
       display: inline-flex;
-      width: 90vw;
+      width: 88vw;
       justify-content: space-evenly;
     }
   }
@@ -69,7 +69,22 @@
     }
   }
   &__whd-container {
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    @include md {
+      border-right: 1px solid $secondary-color--Cloud;
+      display: flex;
+    }
+  }
+  &__whc-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    @include md {
+      display: flex;
+      padding-left: 10%;
+    }
   }
   &__whd-border {
     border: 1px solid $secondary-color--Cloud;
@@ -84,9 +99,10 @@
     }
   }
   &__wh-form {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
+    @include md {
+      display: flex;
+      padding: 0 1rem;
+      }
   }
   &__contact-form {
     display: flex;
