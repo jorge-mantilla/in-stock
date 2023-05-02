@@ -12,7 +12,7 @@ function AddInventoryForm() {
 
   useEffect(() => {
       axios
-          .get(`http://localhost:5051/inventorys/${InventoryId}`)
+          .get(`http://localhost:5051/inventories/${InventoryId}`)
           .then((response) => setInventoryData(response.data));
   }, [InventoryId]);
 
@@ -35,7 +35,7 @@ function AddInventoryForm() {
 
       try {
           const response = await axios.put(
-              `http://localhost:5051/inventorys/${InventoryId}`,
+              `http://localhost:5051/inventories/${InventoryId}`,
               JSON.stringify(newInventoryData),
               {
                   headers: {

@@ -43,8 +43,9 @@ function App() {
             <Route path='/WarehouseDetails/:WarehouseId' element={<WarehouseDetailsPage inventoriesArray={inventoriesArray} warehousesArray={warehousesArray} />}></Route>
             <Route path='/AddWarehouse' element={<AddWarehouse />}></Route>
             <Route path='/EditWarehouse/:WarehouseId' element={<EditWarehouse />}></Route>
+            
             <Route path='/Inventories' element={<InventoryPage warehousesArray={warehousesArray} />}></Route>
-            <Route path="/inventoryDetails/:inventoryId" element={<InventoryDetailsPage warehousesArray={warehousesArray} />} />
+            <Route path="/InventoryDetails/:InventoryId" element={<InventoryDetailsPage warehousesArray={warehousesArray} />} />
             <Route path='/EditInventoryForm' element={<EditInventoryForm />}></Route>
             <Route path='/AddInventoryForm' element={<AddInventoryForm />}></Route>
             <Route path="*" element={<NotFound />} />

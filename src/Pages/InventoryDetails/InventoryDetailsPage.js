@@ -3,33 +3,24 @@ import StockNotif from '../../components/StockNotif/StockNotif.js';
 import { Link, useParams } from 'react-router-dom';
 import axios from "axios";
 import { useState, useEffect } from "react";
-
-
 import './InventoryDetailsPage.scss';
-
 import BackIcon from '../../assets/Icons/arrow_back-24px.svg';
 import EditIcon from '../../assets/Icons/edit-white-24px.svg';
 
 function InventoryDetailsPage({ warehousesArray }) {
 
-    const { inventoryId } = useParams();
     const [inventoryItem, setInventoryItem] = useState(null);
+    const { InventoryId } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:5051/inventories/${inventoryId}`).then((response) => {
+        axios.get(`http://localhost:5051/inventories/${InventoryId}`).then((response) => {
             setInventoryItem(response.data);
         });
-    }, [inventoryId]);
-
-    console.log("inventoryItem state:", inventoryItem);
+    }, [InventoryId]);
 
     const warehouse = inventoryItem && warehousesArray.find(
         (warehouse) => warehouse.id === inventoryItem.warehouse_id
     );
-
-    console.log("warehousesArray prop:", warehousesArray);
-    console.log("Found warehouse:", warehouse);
-
 
     return (
         inventoryItem && (
