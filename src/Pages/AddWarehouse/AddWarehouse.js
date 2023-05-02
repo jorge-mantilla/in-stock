@@ -168,10 +168,10 @@ function AddWarehouse() {
           </div>
         </div>
             <div className="addForm__button-box">
-                <button className="btn__submiter" type="submit" onClick={handleSubmit}>
+                <button className="btn__submiter" onClick={handleSubmit}>
                   Add Warehouse
-                <img className="btn__plus" src={PlusIcon} alt="Add Icon" />
                 </button>
+                <img className="btn__plus" src={PlusIcon} alt="Add Icon" />
                 <Link to="/warehouses"><button type="click" className="btn__canceler">
                   Cancel
                 </button>
