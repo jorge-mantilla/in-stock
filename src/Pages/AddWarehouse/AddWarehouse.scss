@@ -163,12 +163,27 @@
     left: 154.8px;
   }
 }
-
-.btn--plus {
+.btn__arrow {
   position: absolute;
-  top: 37px;
-  left: 166.8px;
-  height: 16px;
+  top: 9.0625rem;
+  left: 1.625rem;
+
+  @include md {
+    top: 6.175rem;
+    left: 4.3625rem;
+  }
+
+  @include lg {
+    top: 6.2375rem;
+    left: 9.8rem;
+  }
+}
+
+.btn__plus {
+  position: absolute;
+  top: 0.655rem;
+  left: 0.225rem;
+  height: 1rem;
 }
 
 .btn__canceler {
@@ -180,17 +195,21 @@
   border: .0625rem solid $secondary-color--Cloud;
   padding: 10px;
   margin: 8px;
-  transition: ease-in-out 0.06s;
   height: 40px;
   @include font_Labels-Links-Buttons-Mobile;
 }
 
-.btn__submit {
+.btn__submiter {
+  background-color: $primary-color--Instock_Indigo;
+  color: $primary-color--Instock_White;
   width: 125px;
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   border: .0625rem solid $secondary-color--Cloud;
   height: 40px;
+  padding: 10px;
+  margin: 8px;
   position: relative;
   @include font_Labels-Links-Buttons-Mobile;
 }

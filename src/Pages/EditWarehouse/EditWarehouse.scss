@@ -122,22 +122,22 @@
   &__wh-form {
     @include md {
       display: flex;
-      padding: 0 16px;
+      padding: 0 1rem;
     }
   }
 
   &__contact-form {
     display: flex;
     flex-direction: column;
-    padding: 0 16px;
+    padding: 0 1rem;
   }
 
   &__input {
     border-radius: 1.25rem;
     border: .0625rem solid $secondary-color--Cloud;
-    width: 280px;
-    height: 25px;
-    padding: 8px;
+    width: 17.5rem;
+    height: 1.5625rem;
+    padding: .5rem;
     margin-bottom: 8px;
   }
 
@@ -149,9 +149,10 @@
 
   &__button-box {
     display: flex;
+    flex-direction: row-reverse;
     background-color: $background-color--Light-Gray;
     justify-content: space-evenly;
-    padding: 16px;
+    padding: 1rem;
     position: relative;
 
     @include md {
@@ -160,49 +161,42 @@
   }
 }
 
-.btn--icon {
+.btn__arrow {
   position: absolute;
-  top: 157px;
-  left: 30px;
+  top: 9.0625rem;
+  left: 1.625rem;
 
   @include md {
-    top: 105.8px;
-    left: 74.8px;
+    top: 6.175rem;
+    left: 4.3625rem;
   }
 
   @include lg {
-    top: 105.8px;
-    left: 154.8px;
+    top: 6.2375rem;
+    left: 9.8rem;
   }
-}
-
-.btn--plus {
-  position: absolute;
-  top: 37px;
-  left: 166.8px;
-  height: 16px;
 }
 
 .btn__cancelee {
   background-color: $primary-color--Instock_White;
   display: flex;
   justify-content: center;
-  width: 110px;
-  border-radius: 30px;
-  border: .0625rem solid $secondary-color--Cloud;
-  padding: 10px;
-  margin: 8px;
+  width: 6.875rem;
+  border-radius: 1.875rem;
+  border: 1px solid $secondary-color--Cloud;
+  padding: .625rem;
+  margin: .5rem;
   transition: ease-in-out 0.06s;
-  height: 40px;
+  height: 2.5rem;
   @include font_Labels-Links-Buttons-Mobile;
 }
 
 .btn__submit {
-  width: 125px;
+  width: 7.8125rem;
   display: flex;
   justify-content: center;
-  border: .0625rem solid $secondary-color--Cloud;
-  height: 40px;
+  border: 1px solid $secondary-color--Cloud;
+  height: 2.5rem;
   position: relative;
   @include font_Labels-Links-Buttons-Mobile;
 }
