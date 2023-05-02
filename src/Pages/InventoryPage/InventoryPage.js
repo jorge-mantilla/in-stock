@@ -9,7 +9,9 @@ import { useState } from "react";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import axios from "axios";
 
+
 function InventoryPage(props) {
+    // const navigate = useNavigate();
 
     const inventoryArray = props.inventoryArray
 
@@ -25,11 +27,12 @@ function InventoryPage(props) {
     }
 
     //used in delete modal component to actually delete inventory item AND then hide delete modal
-    function handleDelete(inventory) {
+    function handleConfirmDelete(inventory) {
         axios.delete(`http://localhost:5051/inventories/${inventory.id}`)
             .then(() => {
                 console.log(`Inventory with id: ${inventory.item_name} has been deleted`);
                 setShowDelete(false);
+                // navigate("/inventories");
             })
             .catch((err) => {
                 console.error(`Error deleting Inventory ${inventory.item_name}: ${err}`);
@@ -97,7 +100,7 @@ function InventoryPage(props) {
 
                 {showDelete && <DeleteModal 
                     deleteClickHandler={deleteClickHandler} 
-                    handleDelete={handleDelete} 
+                    handleConfirmDelete={handleConfirmDelete} 
                     inventory={selectedInventory} 
                     context="inventory"
                 />}

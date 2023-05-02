@@ -9,8 +9,6 @@ import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/Icons/edit-blue-24px.svg';
 
 
-
-
 function Warehouses(props) {
     const [warehousesArray, setWarehousesArray] = useState([])
     const deleteClickHandler = props.deleteClickHandler
@@ -25,7 +23,6 @@ function Warehouses(props) {
         <>
             {warehousesArray.map((warehouse) => {
                 return (
-
                     <article className="warehouse-data" key={warehouse.id} >
                         <div className="warehouse-data__body">
                             <div className="warehouse-data__header">
