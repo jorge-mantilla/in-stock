@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 88%;
     padding: 1rem 0rem;
 
     &__body {
@@ -19,7 +19,7 @@
         flex-direction: column;
         background-color: $primary-color--Instock_White;
         border-radius: .1875rem;
-        width: 88%;
+        width: 100%;
     }
 
     &__nav {
