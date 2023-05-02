@@ -17,7 +17,7 @@ function WarehouseDetailsPage(props) {
     return (
         <>
             <section className="warehouse-inventory">
-                <Link className="inventory-item__link btn--return" to={`/Warehouse/`}>
+                <Link className="inventory-item__link btn--return" to={`/Warehouses/`}>
                     <img src={BackIcon} alt="Return Arrow Icon" />
                 </Link>
                 {warehousesArray.length > 0 &&

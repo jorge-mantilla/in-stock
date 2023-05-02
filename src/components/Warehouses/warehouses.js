@@ -56,7 +56,7 @@ function Warehouses(props) {
                                     <img src={DeleteIcon} alt="Delete Icon" />
                                 </div>
 
-                                <Link id="footer--icon" className="warehouse-data__footer--icon" to={'/EDIT THIS SPECIFIC inventory'}>
+                                <Link id="footer--icon" className="warehouse-data__footer--icon" to={`/EditWarehouse/${warehouse.id}`}>
                                     <img src={EditIcon} alt="Edit Icon" />
                                 </Link>
                             </div>

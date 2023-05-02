@@ -5,7 +5,6 @@ import axios from "axios";
 import PlusIcon from "../../assets/Icons/add-24px.svg";
 import { Link, useNavigate } from "react-router-dom";
 const { v4: uuidv4 } = require("uuid");
-// import { useParams } from "react-router-dom";
 
 function AddWarehouse() {
 
@@ -156,19 +155,21 @@ function AddWarehouse() {
                   onChange={handleInputChange}
                   className="addForm__input"
                 />
-                <button className="btn btn__submit" type="submit">
-                  Add Warehouse
-                </button>
-                <Link to="/warehouses"><button type="click" className="btn__cancel">
-                  Cancel
-                </button>
-                </Link>
-                <img className="btn--plus" src={PlusIcon} alt="Add Icon" />
               </div>
               
             </form>
           </div>
         </div>
+            <div className="addForm__button-box">
+                <button className="btn btn__submit" type="submit" onClick={handleSubmit}>
+                  Add Warehouse
+                </button>
+                <Link to="/warehouses"><button type="click" className="btn__canceler">
+                  Cancel
+                </button>
+                </Link>
+                <img className="btn--plus" src={PlusIcon} alt="Add Icon" />
+          </div>
     </article>
   );
 }

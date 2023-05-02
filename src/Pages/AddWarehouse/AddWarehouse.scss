@@ -8,7 +8,7 @@
   border-radius: .25rem;
   box-shadow: .125rem .125rem .125rem .125rem rgba(0, 0, 0, 0.2),
     0rem .25rem .125rem .125rem rgba(0, 0, 0, 0.2);
-  border-bottom: .0625rem solid $background-color--Light-Gray;
+  border-bottom: 1px solid $secondary-color--Slate;
   width: 95vw;
 
   @include md {
@@ -54,6 +54,9 @@
       display: inline-flex;
       width: 88vw;
       justify-content: space-evenly;
+    }
+    @include lg {
+      width: 78vw;
     }
   }
 
@@ -134,11 +137,11 @@
 
   &__button-box {
     display: flex;
+    flex-direction: row-reverse;
     background-color: $background-color--Light-Gray;
     justify-content: space-evenly;
     padding: 16px;
     position: relative;
-
     @include md {
       justify-content: end;
     }
@@ -168,7 +171,7 @@
   height: 16px;
 }
 
-.btn__cancel {
+.btn__canceler {
   background-color: $primary-color--Instock_White;
   display: flex;
   justify-content: center;
