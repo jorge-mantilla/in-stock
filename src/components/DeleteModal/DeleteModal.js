@@ -1,8 +1,7 @@
 import './DeleteModal.scss';
 import IconClose from '../../assets/Icons/close-24px.svg'
 
-function Delete({ deleteClickHandler, inventory, handleDelete, context }) {
-    console.log(inventory);
+function Delete({ deleteClickHandler, inventory, warehouse, handleConfirmDelete, context }) {
 
     let deleteHeader = '';
     let deleteBody = '';
@@ -12,8 +11,8 @@ function Delete({ deleteClickHandler, inventory, handleDelete, context }) {
         deleteBody = `Please confirm that you’d like to delete ${inventory.item_name} from the inventory list.
         You won’t be able to undo this action.`;
     } else if (context === 'warehouse') {
-        deleteHeader = `Delete ${inventory.warehouse_name} warehouse?`;
-        deleteBody = `Please confirm that you’d like to delete ${inventory.warehouse_name} from the warehouse list.
+        deleteHeader = `Delete ${warehouse.warehouse_name} warehouse?`;
+        deleteBody = `Please confirm that you’d like to delete ${warehouse.warehouse_name} from the warehouse list.
         You won’t be able to undo this action.`;
     }
 
@@ -31,7 +30,8 @@ function Delete({ deleteClickHandler, inventory, handleDelete, context }) {
                 </div>
                 <div className='btns'>
                     <button onClick={deleteClickHandler} className='btns__cancel'>Cancel</button>
-                    <button onClick={() => handleDelete(inventory)} className='btns__delete'>Delete</button>
+                    <button onClick={() => handleConfirmDelete(context === 'inventory' ? inventory : warehouse)} className='btns__delete'>Delete</button>
+
                 </div>
             </div>
 

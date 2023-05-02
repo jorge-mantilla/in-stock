@@ -9,11 +9,9 @@ import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/Icons/edit-blue-24px.svg';
 
 
-
-
 function Warehouses(props) {
     const [warehousesArray, setWarehousesArray] = useState([])
-    const deleteHandler = props.deleteHandler
+    const deleteClickHandler = props.deleteClickHandler
 
     useEffect(() => {
         axios.get(`http://localhost:5051/warehouses`).then((response) => {
@@ -25,7 +23,6 @@ function Warehouses(props) {
         <>
             {warehousesArray.map((warehouse) => {
                 return (
-
                     <article className="warehouse-data" key={warehouse.id} >
                         <div className="warehouse-data__body">
                             <div className="warehouse-data__header">
@@ -55,7 +52,7 @@ function Warehouses(props) {
                                 </div>
                             </div>
                             <div className="warehouse-data__footer">
-                                <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteHandler(warehouse)}>
+                                <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteClickHandler(warehouse)}>
                                     <img src={DeleteIcon} alt="Delete Icon" />
                                 </div>
 

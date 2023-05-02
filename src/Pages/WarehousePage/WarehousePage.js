@@ -2,17 +2,11 @@
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { useState } from "react";
-
-
 import '../WarehousePage/WarehousePage.scss';
-
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
-
 import Warehouses from "../../components/Warehouses/warehouses.js";
 import AddIcon from '../../assets/Icons/add-24px.svg';
 import SortIcon from "../../assets/Icons/sort-24px.svg";
-
-
 
 function WarehousePage(props) {
 
@@ -21,20 +15,19 @@ function WarehousePage(props) {
     const [showDelete, setShowDelete] = useState(false);
     const [selectedWarehouse, setSelectedWarehouse] = useState(null);
 
-    function deleteHandler(item) {
-        console.log("clicked:", item);
+    function deleteClickHandler(item) {
         setSelectedWarehouse(item);
         setShowDelete(!showDelete);
     }
 
-    function handleDelete(warehouse) {
+    function handleConfirmDelete(warehouse) {
         axios.delete(`http://localhost:5051/warehouses/${warehouse.id}`)
             .then(() => {
-                console.log(`Warehouse with id: ${warehouse.item_name} has been deleted`);
+                console.log(`Warehouse with id: ${warehouse.id} has been deleted`);
                 setShowDelete(false);
             })
             .catch((err) => {
-                console.error(`Error deleting warehouse ${warehouse.item_name}: ${err}`);
+                console.error(`Error deleting warehouse ${warehouse.warehouse_name}: ${err}`);
             });
     }
 
@@ -89,8 +82,8 @@ function WarehousePage(props) {
                             </li>
                         </ul>
                     </section>
-                    <Warehouses deleteHandler={deleteHandler} />
-                    {showDelete && <DeleteModal deleteHandler={deleteHandler} warehouse={selectedWarehouse} handleDelete={handleDelete} context="warehouse" />}
+                    <Warehouses deleteClickHandler={deleteClickHandler} />
+                    {showDelete && <DeleteModal deleteClickHandler={deleteClickHandler} warehouse={selectedWarehouse} context="warehouse" handleConfirmDelete={handleConfirmDelete}/>}
                 </div >
             </section >
         </>
