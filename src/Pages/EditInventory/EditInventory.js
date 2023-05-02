@@ -1,4 +1,4 @@
-import "./EditInventory.scss";
+import "./AddWarehouse.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AddIcon from "../../assets/Icons/arrow_back-24px.svg";
@@ -9,57 +9,63 @@ function EditInventory() {
     const [inventoryData, setInventoryData] = useState({});
     const { InventoryId } = useParams();
 
+    console.log("string:" ,inventoryData)
+
+
     useEffect(() => {
+
         axios
-            .get(`http://localhost:5051/inventorys/${InventoryId}`)
+            .get(`http://localhost:5051/inventories`)
             .then((response) => setInventoryData(response.data));
-    }, [InventoryId]);
+            console.log(response.data)
+    }, []);
 
-    if (Object.keys(inventoryData).length === 0) {
-        return <p>Loading ... </p>;
-    }
+    // if (Object.keys(inventoryData).length === 0) {
+    //     return <p>Loading ... </p>;
+    // }
 
-    const handleInputChange = (e) => {
-        setInventoryData({ ...inventoryData, [e.target.name]: e.target.value });
-    };
+    // const handleInputChange = (e) => {
+    //     setInventoryData({ ...inventoryData, [e.target.name]: e.target.value });
+    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const updateFix = "2023-04-26 13:45:04";
+        // const updateFix = "2023-04-26 13:45:04";
 
-        const newInventoryData = {
-            ...inventoryData, updated_at: updateFix, created_at: updateFix
-        }
+        // const newInventoryData = {
+        //     ...inventoryData, updated_at: updateFix, created_at: updateFix
+        // }
 
-        try {
-            const response = await axios.put(
-                `http://localhost:5051/inventorys/${InventoryId}`,
-                JSON.stringify(newInventoryData),
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                }
-            )
+        // try {
+        //     const response = await axios.put (
+        //         `http://localhost:5051/inventories/${InventoryId}`,
+        //         JSON.stringify(newInventoryData),
+        //         {
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             },
+        //         }
+        //     )
 
-            // Check for successful response
-            if (response.status !== 200) {
-                throw new Error("Network response was not ok");
-            }
+    //         // Check for successful response
+    //         if (response.status !== 200) {
+    //             throw new Error("Network response was not ok");
+    //         }
 
-            console.log("Inventory edited successfully!");
-        } catch (error) {
-            console.error("Error editing inventory:", error);
-            console.log("Response data:", error.response.data);
-        }
+    //         console.log("Inventory edited successfully!");
+    //     } catch (error) {
+    //         console.error("Error editing inventory:", error);
+    //         console.log("Response data:", error.response.data);
+    //     }
     };
 
     return (
+        
         <article className="addForm">
             <div className="addForm__tablet-header-box">
                 <h1 className="addForm__header">Edit Inventory</h1>
-                <Link to="../inventorys">
+                <Link to="../inventories">
                     <img
                         id="inventory__btn--icon"
                         className="btn--icon"

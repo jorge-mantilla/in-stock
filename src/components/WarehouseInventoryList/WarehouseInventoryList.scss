@@ -36,14 +36,14 @@
 
         @include md {
             flex-direction: row;
-            justify-content: start;
+            justify-content: flex-start;
         }
     }
 
     &__opt {
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
         width: 100%;
 
         @include md {
@@ -55,7 +55,7 @@
     &__sec {
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
         margin: .5rem 0rem;
         width: 100%;
 
@@ -74,8 +74,8 @@
     &--text {
         @include font_Body-Medium-Mobile;
         display: flex;
-        justify-content: start;
-        align-items: start;
+        justify-content: flex-start;
+        align-items: flex-start;
 
         @include md {
             width: 90%;
