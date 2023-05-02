@@ -1,7 +1,7 @@
 import "./AddWarehouse.scss";
 import { useState } from "react";
 import axios from "axios";
-// import AddIcon from "../../assets/Icons/arrow_back-24px.svg";
+import arrow from "../../assets/Icons/arrow_back-24px.svg";
 import PlusIcon from "../../assets/Icons/add-24px.svg";
 import { Link, useNavigate } from "react-router-dom";
 const { v4: uuidv4 } = require("uuid");
@@ -59,6 +59,13 @@ function AddWarehouse() {
   return (
     <article className="addForm">
       <div className="addForm__tablet-header-box">
+      <Link to="../warehouses">
+          <img
+            className="btn__arrow"
+            src={arrow}
+            alt="Add Icon"
+          />
+        </Link>
         <h1 className="addForm__header">Add New Warehouse</h1>
       </div>
       <div className="addForm__tablet-wrapper">
@@ -161,14 +168,14 @@ function AddWarehouse() {
           </div>
         </div>
             <div className="addForm__button-box">
-                <button className="btn btn__submit" type="submit" onClick={handleSubmit}>
+                <button className="btn__submiter" type="submit" onClick={handleSubmit}>
                   Add Warehouse
+                <img className="btn__plus" src={PlusIcon} alt="Add Icon" />
                 </button>
                 <Link to="/warehouses"><button type="click" className="btn__canceler">
                   Cancel
                 </button>
                 </Link>
-                <img className="btn--plus" src={PlusIcon} alt="Add Icon" />
           </div>
     </article>
   );

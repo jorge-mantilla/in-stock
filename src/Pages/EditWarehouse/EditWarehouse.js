@@ -1,7 +1,7 @@
 import "./EditWarehouse.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import AddIcon from "../../assets/Icons/arrow_back-24px.svg";
+import arrow from "../../assets/Icons/arrow_back-24px.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
@@ -63,14 +63,13 @@ function EditWarehouse() {
     <article className="editForm">
       <div className="editForm__tablet-header-box">
         <h1 className="editForm__header">Edit Warehouse</h1>
-        {/* <Link to="../warehouses">
+        <Link to="../warehouses">
           <img
-            id="warehouse__btn--icon"
-            className="btn--icon"
-            src={AddIcon}
+            className="btn__arrow"
+            src={arrow}
             alt="Add Icon"
           />
-        </Link> */}
+        </Link>
       </div>
       <div className="editForm__whd-border"></div>
       <div className="editForm__tablet-wrapper">
@@ -166,10 +165,12 @@ function EditWarehouse() {
             <button className="btn btn__submit" type="submit" onClick={handleSubmit}>
               Save
             </button>
-            <button type="click" className="btn__cancelee">
+            
+            <button  className="btn__cancelee">
+              <Link to="/">
               Cancel
+              </Link>
             </button>
-            {/* <img className="btn--plus" src={PlusIcon} alt="Add Icon" /> */}
             </div>
     </article>
   );
