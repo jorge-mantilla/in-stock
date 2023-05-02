@@ -2,13 +2,9 @@
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { useState } from "react";
-
-
 import '../WarehousePage/WarehousePage.scss';
-
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
-
-import Warehouses from "../../components/Warehouses/warehouses.js";
+import Warehouses from "../../components/Warehouses/Warehouses.js";
 import AddIcon from '../../assets/Icons/add-24px.svg';
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 
@@ -21,7 +17,7 @@ function WarehousePage(props) {
     const [showDelete, setShowDelete] = useState(false);
     const [selectedWarehouse, setSelectedWarehouse] = useState(null);
 
-    function deleteHandler(item) {
+    function deleteClickHandler(item) {
         console.log("clicked:", item);
         setSelectedWarehouse(item);
         setShowDelete(!showDelete);
@@ -89,8 +85,8 @@ function WarehousePage(props) {
                             </li>
                         </ul>
                     </section>
-                    <Warehouses deleteHandler={deleteHandler} />
-                    {showDelete && <DeleteModal deleteHandler={deleteHandler} warehouse={selectedWarehouse} handleDelete={handleDelete} context="warehouse" />}
+                    <Warehouses deleteClickHandler={deleteClickHandler} />
+                    {showDelete && <DeleteModal deleteClickHandler={deleteClickHandler} context="warehouse" selectedWarehouse={selectedWarehouse} />}
                 </div >
             </section >
         </>
