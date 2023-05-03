@@ -14,6 +14,9 @@ function WarehouseInventoryList(props) {
         return warehouseInventory.warehouse_name === specificWarehouse.warehouse_name
     })
 
+    //Gabi's ticket
+    const deleteClickHandler = props.deleteClickHandler
+
     return (
         <>
             {specificWarehouseInventory.map((inventory) => {
@@ -45,7 +48,10 @@ function WarehouseInventoryList(props) {
                                 </div>
                             </div>
                             <div className="warehouse-data__footer">
-                                <img src={DeleteIcon} alt="Delete Icon" />
+                                {/* <img src={DeleteIcon} alt="Delete Icon" /> */}
+                                <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteClickHandler(inventory)}>
+                                    <img src={DeleteIcon} alt="Delete Icon" />
+                                </div>
                                 <Link className="warehouse-data__footer--icon" to={'/EditWarehouse'}>
                                     < img src={EditIcon} alt="Edit Icon" />
                                 </Link>
