@@ -118,3 +118,53 @@
         }
     }
 }
+
+.warehousedetails {
+    border-bottom: .0625rem solid;
+    width: 100%;
+
+    @include md {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__header {
+        padding: 1rem;
+    }
+
+    &__contain {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    &__container {
+        @include md{
+        margin-right: 4rem;
+        }
+    }
+
+    &__containerleft {
+        @include md {
+            border-left: .0625rem solid;
+            padding-left: 2rem;
+        }
+        @include lg{
+            margin-right: 5rem;
+
+        }
+
+    }
+
+    &__containerright {
+        @include md {
+            padding-left: 2rem;
+        }
+        @include lg{
+            padding-left: 5rem;
+
+        }
+    }
+}

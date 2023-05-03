@@ -8,7 +8,7 @@
   border-radius: .25rem;
   box-shadow: .125rem .125rem .125rem .125rem rgba(0, 0, 0, 0.2),
     0rem .25rem .125rem .125rem rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid $secondary-color--Slate;
+  border-bottom: .0625rem solid $background-color--Light-Gray;
   width: 95vw;
 
   @include md {
@@ -54,9 +54,6 @@
       display: inline-flex;
       width: 88vw;
       justify-content: space-evenly;
-    }
-    @include lg {
-      width: 78vw;
     }
   }
 
@@ -123,7 +120,7 @@
   &__input {
     border-radius: 1.25rem;
     border: .0625rem solid $secondary-color--Cloud;
-    width: 280px;
+    width: 100%;
     height: 25px;
     padding: 8px;
     margin-bottom: 8px;
@@ -137,13 +134,25 @@
 
   &__button-box {
     display: flex;
-    flex-direction: row-reverse;
     background-color: $background-color--Light-Gray;
     justify-content: space-evenly;
     padding: 16px;
     position: relative;
+
     @include md {
       justify-content: end;
+    }
+  }
+
+  &__button {
+    background-color: $background-color--Light-Gray;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+
+    @include md {
+      justify-content: flex-start;
     }
   }
 }
@@ -163,53 +172,42 @@
     left: 154.8px;
   }
 }
-.btn__arrow {
+
+.btn--plus {
   position: absolute;
-  top: 9.0625rem;
-  left: 1.625rem;
-
-  @include md {
-    top: 6.175rem;
-    left: 4.3625rem;
-  }
-
-  @include lg {
-    top: 6.2375rem;
-    left: 9.8rem;
-  }
+  left: 0.5rem;
+  top: 0.75rem;
+  height: 16px;
 }
 
-.btn__plus {
-  position: absolute;
-  top: 0.655rem;
-  left: 0.225rem;
-  height: 1rem;
-}
-
-.btn__canceler {
+.btn__cancel {
   background-color: $primary-color--Instock_White;
   display: flex;
   justify-content: center;
-  width: 110px;
-  border-radius: 30px;
-  border: .0625rem solid $secondary-color--Cloud;
-  padding: 10px;
-  margin: 8px;
-  height: 40px;
+  width: 50%;
+  border-radius: 1.875rem;
+  border: 1px solid $secondary-color--Cloud;
+  padding: 0.625rem;
+  margin: 0.5rem;
+  transition: ease-in-out 0.06s;
+  height: 2.5rem;
   @include font_Labels-Links-Buttons-Mobile;
+
+  @include md {
+    width: 6.875rem;
+  }
 }
 
-.btn__submiter {
-  background-color: $primary-color--Instock_Indigo;
-  color: $primary-color--Instock_White;
-  width: 125px;
-  border-radius: 30px;
+.btn__submit {
+  width: 50%;
   display: flex;
   justify-content: center;
-  border: .0625rem solid $secondary-color--Cloud;
-  height: 40px;
-  padding: 10px;
-  margin: 8px;
+  border: 1px solid $secondary-color--Cloud;
+  height: 2.5rem;
   position: relative;
   @include font_Labels-Links-Buttons-Mobile;
+
+  @include md {
+    width: 7.8125rem;
+  }
 }
