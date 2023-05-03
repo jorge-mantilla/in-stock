@@ -1,35 +1,71 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import '../InventoryList/InventoryList.scss';
+import '../Warehouses/Warehouses.scss';
 
-function Warehouses() {
+import ArrowRightIcon from '../../assets/Icons/chevron_right-24px.svg';
+import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
+import EditIcon from '../../assets/Icons/edit-blue-24px.svg';
+
+
+function Warehouses(props) {
     const [warehousesArray, setWarehousesArray] = useState([])
+    const deleteClickHandler = props.deleteClickHandler
 
     useEffect(() => {
         axios.get(`http://localhost:5051/warehouses`).then((response) => {
             setWarehousesArray(response.data)
         })
     }, []);
-    
+
     return (
-    <>
-        <div>
+        <>
             {warehousesArray.map((warehouse) => {
                 return (
-                <ul>
-                    <Link to={'/WarehouseDetails'}>
-                    <li>{warehouse.warehouse_name}</li>
-                    </Link>
-                    <li>{warehouse.address}</li>
-                    <li>{warehouse.contact_name}</li>
-                    <li>{warehouse.contact_phone} <br /> {warehouse.contact_email}</li>
-                    <li>ACTIONS</li>
-                </ul>
+                    <article className="warehouse-data" key={warehouse.id} >
+                        <div className="warehouse-data__body">
+                            <div className="warehouse-data__header">
+                                <div className="warehouse-data__opt">
+                                    <div className="warehouse-data__sec">
+                                        <h4 className="warehouse-data__title">WAREHOUSE</h4>
+                                        <Link className="warehouse-data__link" to={`/warehouseDetails/${warehouse.id}`}>
+                                            <p className="warehouse-data__link--text">{warehouse.warehouse_name}</p>
+                                            <img className="warehouse-data__link--arrow-icon btn--goto" src={ArrowRightIcon} alt="More Details Arrow Icon" />
+                                        </Link>
+                                    </div>
+                                    <div className="warehouse-data__sec">
+                                        <h4 className="warehouse-data__title">ADDRESS</h4>
+                                        <p className="warehouse-data--text">{warehouse.address}</p>
+                                    </div>
+                                </div>
+                                <div className="warehouse-data__opt">
+                                    <div className="warehouse-data__sec">
+                                        <h4 className="warehouse-data__title">CONTACT NAME</h4>
+                                        <p className="warehouse-data--text">{warehouse.contact_name}</p>
+                                    </div>
+                                    <div className="warehouse-data__sec">
+                                        <h4 className="warehouse-data__title">CONTACT INFORMATION</h4>
+                                        <p className="warehouse-data--text">{warehouse.contact_phone}</p>
+                                        <p className="warehouse-data--text">{warehouse.contact_email}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="warehouse-data__footer">
+                                <div id="footer--icon" className="warehouse-data__footer" onClick={() => deleteClickHandler(warehouse)}>
+                                    <img src={DeleteIcon} alt="Delete Icon" />
+                                </div>
+
+                                <Link id="footer--icon" className="warehouse-data__footer--icon" to={`/EditWarehouse/${warehouse.id}`}>
+                                    <img src={EditIcon} alt="Edit Icon" />
+                                </Link>
+                            </div>
+                        </div>
+                    </article>
                 )
             })
             }
-        </div>
-    </>
-);
+        </>
+    );
 }
 export default Warehouses;

@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     border-top: .0625rem solid $secondary-color--Cloud;
-    box-shadow: 0rem .125rem .3125rem rgba(19, 24, 44, 0.05);
+    box-shadow: 0rem .125rem .3125rem rgba(19, 24, 44, 0.1);
 
     &:nth-of-type(2n) {
         background-color: $background-color--Light-Gray;
@@ -111,17 +111,60 @@
         transform-origin: right;
         width: 8%;
 
-        @include lg {
-            width: 4%;
-        }
-
         &--icon {
-            margin: 0rem 1rem;
-            padding: .5rem 1rem;
+            margin: 0rem .25rem;
+            padding: .375rem;
+
         }
     }
 }
 
-#footer--icon {
-    cursor: pointer;
+.warehousedetails {
+    border-bottom: .0625rem solid;
+    width: 100%;
+
+    @include md {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__header {
+        padding: 1rem;
+    }
+
+    &__contain {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    &__container {
+        @include md{
+        margin-right: 4rem;
+        }
+    }
+
+    &__containerleft {
+        @include md {
+            border-left: .0625rem solid;
+            padding-left: 2rem;
+        }
+        @include lg{
+            margin-right: 5rem;
+
+        }
+
+    }
+
+    &__containerright {
+        @include md {
+            padding-left: 2rem;
+        }
+        @include lg{
+            padding-left: 5rem;
+
+        }
+    }
 }

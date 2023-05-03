@@ -1,0 +1,214 @@
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/globals' as *;
+
+
+.inventory-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 36.25rem;
+    width: 80vw;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-color--Instock_White;
+        border-radius: .25rem;
+        padding: 1rem 0rem;
+        min-height: 22.8125rem;
+        min-width: 21.4375rem;
+        width: 88%;
+        box-shadow: 0rem .125rem .3125rem rgba(19, 24, 44, 0.1);
+
+        @include md {
+            min-width: 44rem;
+            min-height: 18.25rem;
+            max-width: 80%;
+        }
+    }
+
+    &__sec {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0rem 1rem;
+        flex: 1;
+
+        &:first-of-type {
+            width: 90%;
+            margin-right: 2rem;
+            padding: 1rem 0rem;
+
+            @include md {
+                width: 94%;
+            }
+        }
+
+        &:last-of-type {
+            border-top: .0625rem solid $secondary-color--Cloud;
+        }
+    }
+
+    &__header {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        @include font_Header-Mobile;
+        color: $primary-color--Instock_Black;
+    }
+
+    &__subtitle {
+        color: $secondary-color--Slate;
+        margin: .25rem 0rem;
+    }
+
+    &__text {
+        @include font_Body-Medium-Mobile;
+        color: $primary-color--Instock_Black;
+    }
+
+    &__info {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        padding: .5rem 0rem;
+
+        @include md {
+            flex-direction: row;
+            padding: 0rem;
+            margin: 1rem 0rem;
+        }
+
+        &--data {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include md {
+                &:first-of-type {
+                    width: 90%;
+                    margin-right: 2rem;
+                    padding: 1rem 0rem;
+                    border-right: .0625rem solid $secondary-color--Cloud;
+                }
+            }
+        }
+
+        &--sec {
+            width: 100%;
+            display: flex;
+            margin: .25rem;
+        }
+
+        &--opt {
+            width: 96%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+
+    &__btn:hover img {
+        @include md {
+            animation: tilt-shaking .4s ease-out 0s 2 normal forwards;
+
+            @keyframes tilt-shaking {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                25% {
+                    transform: rotate(8deg);
+                }
+
+                50% {
+                    transform: rotate(0deg);
+                }
+
+                75% {
+                    transform: rotate(-8deg);
+                }
+
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+}
+
+#btn {
+    all: unset;
+
+    &--return {
+        padding: .5rem;
+        transition: ease-in-out .15s;
+
+        @include md {
+            &:hover {
+                transform: translateX(-0.25rem);
+            }
+        }
+    }
+
+    &--edit {
+        display: flex;
+        border-radius: 1.875rem;
+        padding: .625rem;
+        margin: .5rem;
+        background-color: $primary-color--Instock_Indigo;
+        transition: ease-in-out .06s;
+
+        @include md {
+            border-radius: 1.25rem;
+            width: 5.0625rem;
+            height: 2.375rem;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        & img {
+            width: 1.25rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            @include md {
+                background-color: #2455c6;
+            }
+        }
+    }
+
+    &--icon {
+        width: .9375rem;
+    }
+
+    &--text {
+        @include font_Labels-Links-Buttons-Desktop;
+        color: $primary-color--Instock_White;
+        display: none;
+
+        @include md {
+            display: block;
+        }
+    }
+}

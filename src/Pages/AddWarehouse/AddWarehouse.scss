@@ -1,0 +1,213 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+
+.addForm {
+  display: block;
+  background-color: $primary-color--Instock_White;
+  border-radius: .25rem;
+  box-shadow: .125rem .125rem .125rem .125rem rgba(0, 0, 0, 0.2),
+    0rem .25rem .125rem .125rem rgba(0, 0, 0, 0.2);
+  border-bottom: .0625rem solid $background-color--Light-Gray;
+  width: 95vw;
+
+  @include md {
+    width: 88vw;
+  }
+
+  @include lg {
+    width: 78vw;
+  }
+
+  &__header {
+    font-size: 22.4px;
+    line-height: 22px;
+    padding: 24px 48px;
+    width: 95vw;
+
+    @include md {
+      width: 88vw;
+    }
+
+    @include lg {
+      width: 78vw;
+    }
+  }
+
+  &__tablet-header-box {
+    @include md {
+      display: inline-flex;
+      border-bottom: .0625rem solid $secondary-color--Cloud;
+    }
+  }
+
+  &__tablet-form-box {
+    @include md {
+      display: inline-flex;
+    }
+  }
+
+  &__tablet-wrapper {
+    display: block;
+
+    @include md {
+      display: inline-flex;
+      width: 88vw;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__subheader {
+    @include font_SubHeader-Mobile;
+    padding: 8px 16px;
+    text-align: left;
+
+    @include md {
+      display: flex;
+    }
+  }
+
+  &__whd-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+
+    @include md {
+      border-right: .0625rem solid $secondary-color--Cloud;
+      display: flex;
+    }
+  }
+
+  &__whc-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+
+    @include md {
+      display: flex;
+      padding-left: 10%;
+    }
+  }
+
+  &__whd-border {
+    border: .0625rem solid $secondary-color--Cloud;
+    width: 95vw;
+    margin-top: 8px;
+
+    @include md {
+      display: none;
+      width: 88vw;
+    }
+
+    @include lg {
+      width: 78vw;
+    }
+  }
+
+  &__wh-form {
+    @include md {
+      display: flex;
+      padding: 0 16px;
+    }
+  }
+
+  &__contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  &__input {
+    border-radius: 1.25rem;
+    border: .0625rem solid $secondary-color--Cloud;
+    width: 100%;
+    height: 25px;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  &__label {
+    padding: 1.6px 0;
+    @include font_Body-Medium-Mobile;
+    text-align: left;
+  }
+
+  &__button-box {
+    display: flex;
+    background-color: $background-color--Light-Gray;
+    justify-content: space-evenly;
+    padding: 16px;
+    position: relative;
+
+    @include md {
+      justify-content: end;
+    }
+  }
+
+  &__button {
+    background-color: $background-color--Light-Gray;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+
+    @include md {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.btn--icon {
+  position: absolute;
+  top: 157px;
+  left: 30px;
+
+  @include md {
+    top: 105.8px;
+    left: 74.8px;
+  }
+
+  @include lg {
+    top: 105.8px;
+    left: 154.8px;
+  }
+}
+
+.btn--plus {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.75rem;
+  height: 16px;
+}
+
+.btn__cancel {
+  background-color: $primary-color--Instock_White;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  border-radius: 1.875rem;
+  border: 1px solid $secondary-color--Cloud;
+  padding: 0.625rem;
+  margin: 0.5rem;
+  transition: ease-in-out 0.06s;
+  height: 2.5rem;
+  @include font_Labels-Links-Buttons-Mobile;
+
+  @include md {
+    width: 6.875rem;
+  }
+}
+
+.btn__submit {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid $secondary-color--Cloud;
+  height: 2.5rem;
+  position: relative;
+  @include font_Labels-Links-Buttons-Mobile;
+
+  @include md {
+    width: 7.8125rem;
+  }
+}
